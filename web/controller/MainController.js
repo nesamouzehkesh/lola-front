@@ -13,5 +13,13 @@
                 .error(function(error){
                     $scope.error = error;
             });
+            
+            ProductRepository.getProductCategories()
+                    .success(function(data){
+                        $scope.data.categories = data;
+            })
+                    .error(function(error){
+                        $scope.error = error;
+            });
     }]);
 }) ();

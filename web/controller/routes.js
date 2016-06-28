@@ -7,6 +7,9 @@
             $routeProvider.when("/products", {
                 templateUrl: "/views/products.html"
             });
+            $routeProvider.when("/categories", {
+                templateUrl: "/views/categories.html"
+            });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);
 })();    
