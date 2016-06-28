@@ -7,10 +7,6 @@
             $routeProvider.when("/products", {
                 templateUrl: "/views/products.html"
             });
-            
-            $routeProvider.when("/contact", {
-                templateUrl: "/startbootstrap-landing-page/home.html#contact"
-            });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);
 })();    
