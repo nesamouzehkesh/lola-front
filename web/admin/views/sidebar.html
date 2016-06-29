@@ -1,0 +1,44 @@
+<div class="default full-block">
+    <div class="header">
+        <div class="user-info">
+            <span class="ghost">Signedin As</span>
+            <span class="userName">Nesa</span>
+        </div>
+    </div>
+    <div class="body margin-top-20">
+        <!-- Make a full list of modules -->
+        <span ng-repeat="module in data.modules">
+            <a href="{{ module.url }}" class="sidebar-links" title="{{ module.name }}">
+                <!-- Bootstrap Glyph icon !-->
+                <span class="{{ module.icon }} color-{{ module.color }}" aria-hidden="true"></span>
+                <span class="module-title">
+                    {{ module.name }}
+                </span>
+            </a>
+        </span>
+        <!-- End: Make a full list of modules -->
+    </div>
+    <div class="footer">
+        <a href="#logout">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout
+        </a>
+    </div>           
+</div>
+
+<div class="default small-block">
+    <div class="header">
+    </div>
+    <div class="body">
+        <!-- Make a full list of modules -->
+        <span ng-repeat="module in data.modules">
+            <a href="{{ module.url }}" class="sidebar-links" title="{{ module.name }}">
+                <!-- Bootstrap Glyph icon !-->
+                <span class="{{ module.icon }} color-{{ module.color }}" aria-hidden="true"></span>
+                <span class="module-title">
+                    {{ module.name }}
+                </span>
+            </a>
+        </span>
+        <!-- End: Make a full list of modules -->
+    </div>
+</div>

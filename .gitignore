@@ -1,0 +1,7 @@
+/build/
+/var/*
+/web/bower_components/
+/web/bower_components
+/nbproject/private/
+/nbproject
+nbproject
