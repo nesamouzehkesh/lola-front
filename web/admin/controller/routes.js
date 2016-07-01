@@ -11,7 +11,8 @@
                 templateUrl: "views/ui.html"
             });
             $routeProvider.when("/playground", {
-                templateUrl: "views/playground.html"
+                templateUrl: "views/playground.html",
+                controller: "PlaygroundController"
             });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);

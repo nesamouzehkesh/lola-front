@@ -1,17 +1,13 @@
-
-<div ng-controller="PlaygroundController">
-    <!-- raveshe aval !-->
-    <div ng-repeat="category in data.categories">
-        <div ng-style="{'background-image':'url({{ category.img }})'}" class="">
-            {{ category.name }}
-        </div>
+<!-- raveshe aval !-->
+<div ng-repeat="category in data.categories">
+    <div ng-style="{'background-image':'url({{ category.img }})'}" class="">
+        {{ category.name }}
     </div>
+</div>
 
-    <!-- raveshe dovom !-->
-    <div ng-repeat="category in data.categories">
-        <div back-img="{{ category.img }}">
-            {{ category.name }}
-        </div>
+<!-- raveshe dovom !-->
+<div ng-repeat="category in data.categories">
+    <div back-img="{{ category.img }}">
+        {{ category.name }}
     </div>
-    
 </div>
