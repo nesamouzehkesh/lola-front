@@ -10,6 +10,9 @@
             $routeProvider.when("/ui", {
                 templateUrl: "views/ui.html"
             });
+            $routeProvider.when("/playground", {
+                templateUrl: "views/playground.html"
+            });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);
 })();    
