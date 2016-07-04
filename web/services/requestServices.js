@@ -9,11 +9,9 @@
             getAllProducts: function() {
                 return $http.get('http://lola-rest.com/api/product/products');
             },
-            deleteProduct: function(id) {
-                return $http.delete('http://lola-rest.com/api/product/products', {id: id});
-            },
+            
             getProductCategories: function() {
-                return $http.get('http://lola-rest.com/api/product/categories');
+                return $http.get('http://lola-rest.com/api/admin/category/categories');
             }
         };
     }]);

@@ -5,7 +5,12 @@
                 templateUrl: "views/home.html"
             });
             $routeProvider.when("/products", {
-                templateUrl: "views/products.html"
+                templateUrl: "views/products.html",
+                controller: "ProductController"
+            });
+            $routeProvider.when("/categories", {
+                templateUrl: "views/categories.html",
+                controller: "ProductController"
             });
             $routeProvider.when("/ui", {
                 templateUrl: "views/ui.html"
