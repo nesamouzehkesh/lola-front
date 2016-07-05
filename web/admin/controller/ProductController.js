@@ -20,6 +20,12 @@
           .error(function (error) {
                 $scope.data.error = error;
           });  
+          
+        ProductServices.adminDeleteProduct = function (product) {
+        product.$delete().then(function () {
+            $scope.data.products.splice($scope.data.products.indexOf(product), 1);
+        });
+    };
         
     }]);     
 

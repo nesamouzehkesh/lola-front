@@ -1,11 +1,20 @@
 
-<span ng-repeat="module in data.modules">
-    <a href="{{ module.url }}" class="module-logo" title="{{ module.name }}">
-        <!-- Bootstrap Glyph icon !-->
-        <span class="{{ module.icon }} bg-{{ module.color }}"></span>
-        <h3>{{ module.name }}</h3>
-        <span class="description">
-            {{ module.description }}
-        </span>
-    </a>
-</span>
+
+ <div class="right_col" role="main">
+    <div class="row tile_count">
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <a href="#/products" class="count_top"><i class="glyphicon glyphicon-th-large"></i>Products</a>
+            <div class="products"></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <a href="#/categories" class="count_top"><i class="glyphicon glyphicon-folder-close"></i>Categories</a>
+            <div class="categories"></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <a href="#" class="count_top"><i class="fa fa-user"></i> Membership</a>
+            <div class="membership"></div>
+        </div>
+    </div>
+     <a href="/#">Back to main page</a>
+ </div>
+          

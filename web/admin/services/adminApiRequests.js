@@ -15,6 +15,7 @@
             adminGetProductCategories: function() {
                 return $http.get('http://lola-rest.com/api/admin/category/categories');
             }
+            
         };
     }]);
 })();
