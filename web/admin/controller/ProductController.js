@@ -20,12 +20,25 @@
           .error(function (error) {
                 $scope.data.error = error;
           });  
-          
+
+
+        $scope.deleteProduct = function(product){
+            ProductServices.adminDeleteProduct(product.id)
+                .success(function () {
+                    $scope.data.products.splice($scope.data.products.indexOf(product), 1);
+                }) 
+                .error(function (error) {
+                      $scope.data.error = error;
+                });  
+        };          
+        
+        /*
         ProductServices.adminDeleteProduct = function (product) {
-        product.$delete().then(function () {
-            $scope.data.products.splice($scope.data.products.indexOf(product), 1);
-        });
-    };
+            product.$delete().then(function () {
+                $scope.data.products.splice($scope.data.products.indexOf(product), 1);
+            });
+        };
+        */
         
     }]);     
 
