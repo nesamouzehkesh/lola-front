@@ -1,9 +1,10 @@
 (function () {
     var myApp = angular.module('mainApp');
     
-    myApp.controller('ProductController', ['$scope', 'ProductServices', 
-        function($scope, ProductServices) {
-        $scope.data = {};        
+    myApp.controller('ProductController', ['$scope', 'ProductServices', '$location',
+        function($scope, ProductServices, $location) {
+        $scope.data = {}; 
+        $scope.data.product;
         
         ProductServices.adminGetProducts()
           .success(function (data) {
@@ -20,8 +21,7 @@
           .error(function (error) {
                 $scope.data.error = error;
           });  
-
-
+          
         $scope.deleteProduct = function(product){
             ProductServices.adminDeleteProduct(product.id)
                 .success(function () {
@@ -30,7 +30,19 @@
                 .error(function (error) {
                       $scope.data.error = error;
                 });  
-        };          
+        };    
+        
+        // callback for ng-click 'createUser':
+        
+        $scope.addNewProduct = function (product) {
+            ProductServices.adminAddProduct(product.id)
+                .success(function(data) {
+                    $scope.data.products.push(data);
+                });
+           
+        };
+
+       
         
         /*
         ProductServices.adminDeleteProduct = function (product) {

@@ -12,6 +12,11 @@
             adminDeleteProduct: function(id) {
                 return $http.delete('http://lola-rest.com/api/admin/product/product/' + id);
             },
+            
+            adminAddProduct: function(id) { 
+                return $http.post('http://lola-rest.com/api/admin/product/product/' + id);
+            },
+            
             adminGetProductCategories: function() {
                 return $http.get('http://lola-rest.com/api/admin/category/categories');
             }

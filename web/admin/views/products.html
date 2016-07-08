@@ -1,16 +1,61 @@
+<button type="button" class="btn btn-primary" data-target="#addModal" data-toggle="modal">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Add Product
+</button>
 
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
 
- <table class="table table-hover">
-        <tr><th>ID</th><th>Name</th><th></th></tr>
-        <tr ng-repeat="product in data.products">
-          
-            <td>{{product.id}}</td>
-            <td>{{product.name}}</td>
-            <td>
-                <button type="button" class="btn btn-danger" ng-click="deleteProduct(product)">
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    Delete
-                </button>
-            </td>
-        </tr>
+              <form name="addProductFrom"
+                  ng-submit="addNewProduct(product)">
+                  <b>Add a new product:</b>
+                  <fieldset class="form-group">
+                      <textarea class="form-control" placeholder="Product ID" 
+                                title="Name"ng-model="product.id"></textarea>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <textarea class="form-control" placeholder="Product Name" 
+                                title="Name"ng-model="product.name"></textarea>
+                  </fieldset>   
+                  <fieldset class="form-group">
+                      <input class="form-control" placeholder="Describe the product..." title="Description"
+                             ng-model="product.description" />
+                  </fieldset>
+                  <fieldset class="form-group">
+                      <input class="form-control" placeholder="Product Price" title="Price"
+                             ng-model="product.price" />
+                  </fieldset>
+                  <fieldset class="form-group">
+                      <input type="submit" class="btn btn-primary pull-right" value="Submit Entry"/>
+                  </fieldset>
+              </form>   
+                  
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-hover margin-top-20">
+    <tr><th>ID</th><th>Name</th><th></th></tr>
+    <tr ng-repeat="product in data.products">
+
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>
+            <button type="button" class="btn btn-danger" ng-click="deleteProduct(product)">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                Delete
+            </button>
+            <button type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                Edit
+            </button>
+        </td>
+    </tr>
 </table>
