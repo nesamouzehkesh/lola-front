@@ -9,6 +9,9 @@
             getProducts: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/product/products', {params: {id: id}}); 
             },
+            getProduct: function(id) {
+                return $http.get('http://lola-rest.com/api/admin/product/product/' + id); 
+            },
             deleteProduct: function(id) {
                 return $http.delete('http://lola-rest.com/api/admin/product/product/' + id);
             },

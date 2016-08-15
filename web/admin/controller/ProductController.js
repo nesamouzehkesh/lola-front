@@ -4,7 +4,7 @@
     myApp.controller('ProductController', ['$scope', 'ProductServices', '$location', '$http',
         function($scope, ProductServices, $location, $http) {
         $scope.data = {}; 
-        $scope.data.product;
+        $scope.data.product = {};
         
         ProductServices.getProducts()
           .success(function (data) {
@@ -13,6 +13,7 @@
           .error(function (error) {
                 $scope.data.error = error;
           });
+          
           
         ProductServices.getProductCategories()
           .success(function (data) {
@@ -32,11 +33,21 @@
                 });  
         };    
         
-        $scope.addNewProduct = function (product) {
+        $scope.postNewProduct = function (product) {
             ProductServices.addProduct(product)
                 .success(function(data) {
                     $scope.data.products.push(data);
+            
+                    //close bootstrap modal
                 });
+        };
+        
+        $scope.editProduct = function (product) {
+            ProductServices.getProduct(product.id)
+                .success(function(data) {
+                    $scope.data.product = data;
+                    //open modal
+                });          
         };
         
         /*
