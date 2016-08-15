@@ -1,6 +1,6 @@
 {
-  "name": "felix-front",
-  "description": "An AngularJS front end using Symfony Felix Rest API",
+  "name": "Lola",
+  "description": "An AngularJS front end using Symfony Lola Rest API",
   "main": "",
   "moduleType": [
     "amd"
@@ -17,6 +17,9 @@
   "dependencies": {
     "angular": "~1.5.3",
     "bootstrap": "^3.3.6",
-    "angular-bootstrap": "^2.0.1"
+    "angular-bootstrap": "^2.0.1",
+    "angular-route": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "ngBootbox": "^0.1.3"
   }
 }

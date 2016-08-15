@@ -1,46 +1,39 @@
-<button type="button" class="btn btn-primary" data-target="#addModal" data-toggle="modal">
+<button type="button" class="btn btn-primary" ng-click="addProduct()">
     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     Add Product
 </button>
 
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="addModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-              <form name="postProductFrom"
-                  ng-submit="postNewProduct(data.product)" onSubmit="CloseModal();">
-                  <b>Add a new product:</b>
-                  <input type="hidden" ng-model="data.product.id" />
-                  <fieldset class="form-group">
-                      <textarea class="form-control" placeholder="Product Name" 
-                                title="Name"ng-model="data.product.name"></textarea>
-                  </fieldset>   
-                  <fieldset class="form-group">
-                      <input class="form-control" placeholder="Describe the product..." title="Description"
-                             ng-model="data.product.description" />
-                  </fieldset>
-                  <fieldset class="form-group">
-                      <input class="form-control" placeholder="Product Price" title="Price"
-                             ng-model="data.product.price" />
-                  </fieldset>
-                  <fieldset class="form-group">
-                      <input type="submit" class="btn btn-primary pull-right" value="Submit Entry"/>
-                  </fieldset>
-              </form>   
-                  
-            </div>
-        </div>
+<script type="text/ng-template" id="ProductModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">I'm a modal!</h3>
     </div>
-</div>
+    <div class="modal-body">
+        <form ng-submit="postProduct(data.product)" id="postProductFrom">
+            <b>Add a new product:</b>
+            <input type="hidden" ng-model="data.product.id" />
+            <fieldset class="form-group">
+                <textarea class="form-control" placeholder="Product Name" 
+                          title="Name"ng-model="data.product.name"></textarea>
+            </fieldset>   
+            <fieldset class="form-group">
+                <input class="form-control" placeholder="Describe the product..." title="Description"
+                       ng-model="data.product.description" />
+            </fieldset>
+            <fieldset class="form-group">
+                <input class="form-control" placeholder="Product Price" title="Price"
+                       ng-model="data.product.price" />
+            </fieldset>
+        </form>   
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" form="postProductFrom" value="Submit">Save</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
 
 <table class="table table-hover margin-top-20">
     <tr><th>ID</th><th>Name</th><th></th></tr>
     <tr ng-repeat="product in data.products">
-
         <td>{{product.id}}</td>
         <td>{{product.name}}</td>
         <td>
