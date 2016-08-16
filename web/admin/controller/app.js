@@ -1,5 +1,11 @@
 (function () {
-    var myApp = angular.module('mainApp', ['ngRoute', 'ngResource', 'adminApiRequests', 'ui.bootstrap', 'ngBootbox']);
+    var myApp = angular.module('mainApp', [
+        'ngRoute', 
+        'ngResource', 
+        'adminApiRequests', 
+        'ui.bootstrap', 
+        'ngBootbox'
+    ]);
     
     myApp.controller('MainController', ['$scope', '$http', '$location',
         function($scope, $http, $location) {

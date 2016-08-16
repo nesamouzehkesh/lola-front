@@ -7,7 +7,7 @@
             $scope.data.product = product;
             
             $scope.postProduct = function (product) {
-                ProductServices.addProduct(product)
+                ProductServices.postProduct(product)
                     .success(function(data) {
                         $uibModalInstance.close(data);
                     });

@@ -71,7 +71,7 @@
                 });          
         };
         
-        // A simple function just to create and returns a product modal instance
+        // A simple function just to create and return a product modal instance
         function getProductModal(data) {
             var modalInstance = $uibModal.open({
                 //size: size,
