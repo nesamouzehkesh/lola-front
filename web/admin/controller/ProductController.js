@@ -45,14 +45,16 @@
         // Add new product
         $scope.addProduct = function () {
             // Get modal instance
-            var modalInstance = getProductModal({});
+            var modalInstance = openProductModal({});
+            
             // Do appropriate job for the result of modal actions
             modalInstance.result.then(function (data) {
                 $scope.data.products.push(data);
-                console.log('Modal submited and colsed');
+                console.log('Modal colsed');
             }, function () {
-                console.log('Modal dismissed at: ');
-            });            
+                console.log('Modal dismissed');
+            });
+            
         };
         
         // Edit product
@@ -61,22 +63,26 @@
             ProductServices.getProduct(product.id)
                 .success(function(data) {
                     // Get modal instance with this product data
-                    var modalInstance = getProductModal(data);
+                    var modalInstance = openProductModal(data);
+                    
                     modalInstance.result.then(function (data) {
                         //TODO: update same product in the $scope.data.products
                         console.log('Modal submited and colsed');
                     }, function () {
                         console.log('Modal dismissed at: ');
-                    });                      
+                    });
                 });          
         };
         
-        // A simple function just to create and return a product modal instance
-        function getProductModal(data) {
+
+
+        // A simple function just to create and returns a product modal instance
+        function openProductModal(data) {
+
             var modalInstance = $uibModal.open({
                 //size: size,
                 animation: $scope.animationsEnabled,
-                templateUrl: 'ProductModalContent.html',
+                templateUrl: 'views/partial/productModalContent.html',
                 controller: 'ProductModalController',
                 resolve: {
                   product: function () {

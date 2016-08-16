@@ -3,34 +3,6 @@
     Add Product
 </button>
 
-<!-- we put this inside the script tag to be able to give a name to it, we can have several of these-->
-<script type="text/ng-template" id="ProductModalContent.html">
-    <div class="modal-header">
-        <h3 class="modal-title">I'm a modal!</h3>
-    </div>
-    <div class="modal-body">
-        <form ng-submit="postProduct(data.product)" id="postProductFrom">
-            <b>Add a new product:</b>
-            <input type="hidden" ng-model="data.product.id" />
-            <fieldset class="form-group">
-                <textarea class="form-control" placeholder="Product Name" 
-                          title="Name"ng-model="data.product.name"></textarea>
-            </fieldset>   
-            <fieldset class="form-group">
-                <input class="form-control" placeholder="Describe the product..." title="Description"
-                       ng-model="data.product.description" />
-            </fieldset>
-            <fieldset class="form-group">
-                <input class="form-control" placeholder="Product Price" title="Price"
-                       ng-model="data.product.price" />
-            </fieldset>
-        </form>   
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="submit" form="postProductFrom" value="Submit">Save</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-</script>
 
 <table class="table table-hover margin-top-20">
     <tr><th>ID</th><th>Name</th><th></th></tr>
@@ -49,4 +21,3 @@
         </td>
     </tr>
 </table>
-
