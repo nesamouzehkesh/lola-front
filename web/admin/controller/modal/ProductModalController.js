@@ -9,7 +9,7 @@
             $scope.postProduct = function (product) {
                 ProductServices.addProduct(product)
                     .success(function(data) {
-                        $uibModalInstance.close(data);
+                        $uibModalInstance.close(data);  
                     });
             };                
 
