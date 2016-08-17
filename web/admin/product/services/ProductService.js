@@ -15,7 +15,7 @@
             deleteProduct: function(id) {
                 return $http.delete('http://lola-rest.com/api/admin/product/product/' + id);
             },
-            addProduct: function(product) { 
+            postProduct: function(product) { 
                 return $http.post('http://lola-rest.com/api/admin/product/product', {product: product});
             },
             getProductCategories: function() {
