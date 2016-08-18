@@ -3,29 +3,35 @@
     
     myApp.controller('ProductController', ['$scope', 'ProductApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, ProductApi, $location, $http, $uibModal, $ngBootbox) {
-        $scope.data = {}; 
-        $scope.data.product = {};
-        $scope.currentPage = 1;
-        $scope.pageSize = 10;
-        $scope.data.products = [];
+        var init = function() {
+            $scope.data = {};
+            $scope.data.product = {};
+            $scope.data.search = {};
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
+            $scope.data.products = [];
+            
+            // Load list of products 
+            $scope.getModelList();
+        };
         
         // Get list of products from backend
-        ProductApi.getProducts()
-          .success(function (data) {
-              $scope.data.products = data;
-          }) 
-          .error(function (error) {
-                $scope.data.error = error;
-          });
-          
-        // Get list of product categories from backend  
-        ProductApi.getProductCategories()
-          .success(function (data) {
-              $scope.data.categories = data;
-          }) 
-          .error(function (error) {
-                $scope.data.error = error;
-          });  
+        $scope.getModelList = function() {
+            ProductApi.getProducts($scope.data.search)
+              .success(function (data) {
+                  $scope.data.products = data;
+              }) 
+              .error(function (error) {
+                    $scope.data.error = error;
+              });
+        };
+        
+        // Reset the search result
+        $scope.resetSearchResult = function() {
+            $scope.data.search = {};
+            $scope.currentPage = 1;
+            $scope.getModelList();
+        };        
         
         // Delete a product   
         $scope.deleteProduct = function(product) {
@@ -76,7 +82,6 @@
                     });
                 });          
         };
-        
 
 
         // A simple function just to create and returns a product modal instance
@@ -96,5 +101,7 @@
             
             return modalInstance;
         }
+        
+        init();
     }]);     
 }) ();

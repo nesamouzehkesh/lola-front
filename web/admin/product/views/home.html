@@ -1,13 +1,33 @@
-<button type="button" class="btn btn-primary" ng-click="addProduct()">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-    Add Product
-</button>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-6">
+        <button type="button" class="btn btn-primary" ng-click="addProduct()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Add Product
+        </button>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-6">
+        <div class="pull-right">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" ng-keydown="$event.which === 13 && getModelList()"
+                    ng-model="data.search.searchText" required="required" class="form-control" placeholder="Search Text">
+                </div>
+                <button class="btn btn-primary" ng-class="{'disabled': data.search.searchText === undefined}" ng-click="getModelList()">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <button class="btn btn-primary" ng-click="resetSearchResult()">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </form>            
+        </div>
+    </div>            
+</div> 
 
 
 <table class="table table-hover margin-top-20">
     <tr><th>ID</th><th>Name</th><th></th></tr>
-    <tr dir-paginate="product in data.products | filter:q | itemsPerPage: pageSize" 
-                    current-page="currentPage" ng-class="$odd ? 'odd' : 'even'">
+    <tr dir-paginate="product in data.products | filter:q | itemsPerPage: pageSize" current-page="currentPage">
         <td>{{product.id}}</td>
         <td>{{product.name}}</td>
         <td>
@@ -25,8 +45,12 @@
 
 
 <div class="text-center">
-          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" 
-              template-url="../../../bower_components/angularUtils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+    <dir-pagination-controls 
+        boundary-links="true" 
+        on-page-change="pageChangeHandler(newPageNumber)" 
+        template-url="../../../bower_components/angularUtils-pagination/dirPagination.tpl.html"
+        >
+    </dir-pagination-controls>
 </div>
 
 

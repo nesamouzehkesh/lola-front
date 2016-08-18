@@ -6,8 +6,8 @@
     
     adminApiRequests.factory('ProductApi', ['$http', function($http) {
         return {
-            getProducts: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/product/products', {params: {id: id}}); 
+            getProducts: function(criteria) {
+                return $http.get('http://lola-rest.com/api/admin/product/products', {params: criteria}); 
             },
             getProduct: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/product/product/' + id); 
