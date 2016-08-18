@@ -3,7 +3,8 @@
         'ngRoute', 
         'ngResource', 
         'ui.bootstrap', 
-        'ngBootbox'
+        'ngBootbox',
+        'angularUtils.directives.dirPagination'
     ]);
     
     myApp.controller('MainController', ['$scope', '$http', '$location',

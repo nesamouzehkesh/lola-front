@@ -2,24 +2,16 @@
     <h3 class="modal-title">I'm a modal!</h3>
 </div>
 <div class="modal-body">
-    <form ng-submit="postProduct(data.product)" id="postProductFrom">
-        <b>Add a new product:</b>
-        <input type="hidden" ng-model="data.product.id" />
+    <form ng-submit="postCategory(data.category)" id="postCategoryFrom">
+        <b>Add a new Category:</b>
+        <input type="hidden" ng-model="data.category.id" />
         <fieldset class="form-group">
-            <textarea class="form-control" placeholder="Product Name" 
-                      title="Name"ng-model="data.product.name"></textarea>
+            <textarea class="form-control" placeholder="Category Name" 
+                      title="Name"ng-model="data.category.name"></textarea>
         </fieldset>   
-        <fieldset class="form-group">
-            <input class="form-control" placeholder="Describe the product..." title="Description"
-                   ng-model="data.product.description" />
-        </fieldset>
-        <fieldset class="form-group">
-            <input class="form-control" placeholder="Product Price" title="Price"
-                   ng-model="data.product.price" />
-        </fieldset>
     </form>   
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="submit" form="postProductFrom" value="Submit">Save</button>
+    <button class="btn btn-primary" type="submit" form="postCategoryFrom" value="Submit">Save</button>
     <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
 </div>

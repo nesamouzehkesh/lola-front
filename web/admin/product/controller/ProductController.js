@@ -5,6 +5,9 @@
         function($scope, ProductApi, $location, $http, $uibModal, $ngBootbox) {
         $scope.data = {}; 
         $scope.data.product = {};
+        $scope.currentPage = 1;
+        $scope.pageSize = 10;
+        $scope.data.products = [];
         
         // Get list of products from backend
         ProductApi.getProducts()
