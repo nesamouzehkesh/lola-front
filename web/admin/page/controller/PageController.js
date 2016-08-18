@@ -44,7 +44,7 @@
             
             // Do appropriate job for the result of modal actions
             modalInstance.result.then(function (data) {
-                $scope.data.page.push(data);
+                $scope.data.pages.push(data);
                 console.log('Modal colsed');
             }, function () {
                 console.log('Modal dismissed');
@@ -80,7 +80,7 @@
                 templateUrl: 'views/partial/pageModalContent.html',
                 controller: 'PageModalController',
                 resolve: {
-                  product: function () {
+                  page: function () {
                     return data;
                   }
                 }
