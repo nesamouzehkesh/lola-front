@@ -10,7 +10,7 @@
         $scope.data.pages = [];
         
         // Get list of pagess from backend
-        ProductApi.getPages()
+        PageApi.getPages()
           .success(function (data) {
               $scope.data.pages = data;
           }) 
