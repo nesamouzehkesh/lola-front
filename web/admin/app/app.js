@@ -45,6 +45,13 @@
                     'icon': 'glyphicon glyphicon-list-alt',
                     'color': 'yellow',
                     'description': 'Pages of syste'
+                },
+                {
+                    'name': 'Themes',
+                    'url': '/admin/theme',
+                    'icon': 'glyphicon glyphicon-picture',
+                    'color': 'yellow',
+                    'description': 'Themes of syste'
                 }
             ];
            
