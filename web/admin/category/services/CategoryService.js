@@ -12,15 +12,13 @@
             getCategory: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/category/category/' + id); 
             },
-            deleteProduct: function(id) {
-                return $http.delete('http://lola-rest.com/api/admin/product/product/' + id);
+            deleteCategory: function(id) {
+                return $http.delete('http://lola-rest.com/api/admin/category/category/' + id);
             },
             postCategory: function(category) { 
-                return $http.post('http://lola-rest.com/api/admin/product/product', {category: category});
-            },
-            getProductCategories: function() {
-                return $http.get('http://lola-rest.com/api/admin/category/categories');
+                return $http.post('http://lola-rest.com/api/admin/category/category', {category: category});
             }
+            
         };
     }]);
 })();
