@@ -18,7 +18,7 @@
             postProduct: function(product) { 
                 return $http.post('http://lola-rest.com/api/admin/product/product', {product: product});
             },
-            getProductCategories: function() {
+            getCategories: function() {
                 return $http.get('http://lola-rest.com/api/admin/category/categories');
             }
         };

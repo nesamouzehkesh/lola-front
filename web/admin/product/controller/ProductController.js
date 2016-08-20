@@ -10,13 +10,23 @@
             $scope.currentPage = 1;
             $scope.pageSize = 10;
             $scope.data.products = [];
+            $scope.data.categories = [];
+            
+            // Get list of categories from backend
+            ProductApi.getCategories()
+              .success(function (data) {
+                $scope.data.categories = data;
+              }) 
+              .error(function (error) {
+                $scope.data.error = error;
+            });
             
             // Load list of products 
-            $scope.getModelList();
+            $scope.getProductList();
         };
         
         // Get list of products from backend
-        $scope.getModelList = function() {
+        $scope.getProductList = function() {
             ProductApi.getProducts($scope.data.search)
               .success(function (data) {
                   $scope.data.products = data;
@@ -26,11 +36,16 @@
               });
         };
         
+        $scope.listCategoryItems = function(category) {
+            $scope.data.search.category = category.id;
+            $scope.getProductList();
+        };
+        
         // Reset the search result
         $scope.resetSearchResult = function() {
             $scope.data.search = {};
             $scope.currentPage = 1;
-            $scope.getModelList();
+            $scope.getProductList();
         };        
         
         // Delete a product   
