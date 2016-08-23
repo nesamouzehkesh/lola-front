@@ -17,6 +17,17 @@
             <input class="form-control" placeholder="Product Price" title="Price"
                    ng-model="data.product.price" />
         </fieldset>
+        
+        <ui-select multiple ng-model="data.product.category">
+            <ui-select-match>
+                {{ $item.name }}
+            </ui-select-match>
+            <ui-select-choices repeat="item in (data.categories | filter: $select.search) track by item.id">
+                <span ng-bind="item.name"></span>
+            </ui-select-choices>
+        </ui-select>
+    
+        
     </form>   
 </div>
 <div class="modal-footer">

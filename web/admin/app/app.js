@@ -4,7 +4,9 @@
         'ngResource', 
         'ui.bootstrap', 
         'ngBootbox',
-        'angularUtils.directives.dirPagination'
+        'angularUtils.directives.dirPagination',
+        'ui.select', 
+        'ngSanitize'
     ]);
     
     myApp.controller('MainController', ['$scope', '$http', '$location',
