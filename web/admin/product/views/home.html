@@ -1,10 +1,15 @@
 <ng-include src="'views/partial/productPageHeader.html'"></ng-include>
 
 <table class="table table-hover margin-top-20">
-    <tr><th>ID</th><th>Name</th><th></th></tr>
+    <tr><th>ID</th><th>Name</th><th class="text-right">Product's categories:</th></tr>
     <tr dir-paginate="product in data.products | filter:q | itemsPerPage: pageSize" current-page="currentPage">
         <td>{{product.id}}</td>
         <td>{{product.name}}</td>
+        <td>
+            <span class="label label-default" ng-repeat="category in product.categories">
+                {{category.name}}
+            </span>
+        </td>
         <td>
             <button type="button" class="btn btn-danger" ng-click="deleteProduct(product)">
                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

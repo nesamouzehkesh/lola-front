@@ -11,8 +11,8 @@
             $scope.pageSize = 10;
             $scope.data.products = [];
             $scope.data.categories = [];
-
-            
+           
+                       
             // Get list of categories from backend
             ProductApi.getCategories()
               .success(function (data) {
