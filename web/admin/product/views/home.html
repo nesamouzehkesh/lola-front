@@ -1,12 +1,16 @@
 <ng-include src="'views/partial/productPageHeader.html'"></ng-include>
 
 <table class="table table-hover margin-top-20">
-    <tr><th>ID</th><th>Name</th><th class="text-right">Product's categories:</th></tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
     <tr dir-paginate="product in data.products | filter:q | itemsPerPage: pageSize" current-page="currentPage">
         <td>{{product.id}}</td>
-        <td>{{product.name}}</td>
         <td>
-            <span class="label label-default" ng-repeat="category in product.categories">
+            {{product.name}}
+            <span class="label label-success margin-left-2" ng-repeat="category in product.categories">
                 {{category.name}}
             </span>
         </td>
