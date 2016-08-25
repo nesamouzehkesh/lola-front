@@ -57,7 +57,7 @@
                 .then(function() {
                     ProductApi.deleteProduct(product.id)
                         .success(function () {
-                            $scope.data.products.splice($scope.data.products.indexOf(product), 1);
+                            $scope.getProductList();
                         }) 
                         .error(function (error) {
                               $scope.data.error = error;
@@ -74,7 +74,7 @@
             
             // Do appropriate job for the result of modal actions
             modalInstance.result.then(function (data) {
-                $scope.data.products.push(data);
+                $scope.getProductList();
                 console.log('Modal colsed');
             }, function () {
                 console.log('Modal dismissed');
@@ -91,7 +91,7 @@
                     var modalInstance = openProductModal(data);
                     
                     modalInstance.result.then(function (data) {
-                        //TODO: update same product in the $scope.data.products
+                        $scope.getProductList();
                         console.log('Modal submited and colsed');
                     }, function () {
                         console.log('Modal dismissed at: ');
