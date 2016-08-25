@@ -6,7 +6,6 @@
             $scope.data = {};
             $scope.data.product = product;
             $scope.data.categories = [];
-            $scope.selected = { value: $scope.data.categories[0] };            
             
             // Get list of categories from backend
             ProductApi.getCategories()
