@@ -11,6 +11,7 @@
             $scope.pageSize = 10;
             $scope.data.products = [];
             $scope.data.categories = [];
+            
            
                        
             // Get list of categories from backend
@@ -98,6 +99,23 @@
                     });
                 });          
         };
+        
+        // View product
+        $scope.viewProduct = function (product) {
+            // First get product full information from back-end
+            ProductApi.getProduct(product.id)
+                .success(function(data) {
+                    // Get modal instance with this product data
+                    var modalInstance = openViewProductModal(data);
+                    
+                    modalInstance.result.then(function (data) {
+                        $scope.getProductList();
+                        console.log('Modal submited and colsed');
+                    }, function () {
+                        console.log('Modal dismissed at: ');
+                    });
+                });          
+        };
 
 
         // A simple function just to create and returns a product modal instance
@@ -107,6 +125,24 @@
                 //size: size,
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/partial/productModalContent.html',
+                controller: 'ProductModalController',
+                resolve: {
+                  product: function () {
+                    return data;
+                  }
+                }
+            });
+            
+            return modalInstance;
+        }
+        
+        //Modal that shows the information of a product when clicked on "View"
+        function openViewProductModal(data) {
+
+            var modalInstance = $uibModal.open({
+                //size: size,
+                animation: $scope.animationsEnabled,
+                templateUrl: 'views/partial/viewProductModalContent.html',
                 controller: 'ProductModalController',
                 resolve: {
                   product: function () {

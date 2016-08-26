@@ -2,7 +2,7 @@
     <h3 class="modal-title">I'm a modal!</h3>
 </div>
 <div class="modal-body">
-    <form ng-submit="postProduct(data.product)" id="postProductFrom">
+    <form ng-submit="postProduct(data.product)" id="postProductForm">
         <b>Add a new product:</b>
         <input type="hidden" ng-model="data.product.id" />
         <fieldset class="form-group">
@@ -31,6 +31,6 @@
     </form>   
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="submit" form="postProductFrom" value="Submit">Save</button>
+    <button class="btn btn-primary" type="submit" form="postProductFormm" value="Submit">Save</button>
     <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
 </div>

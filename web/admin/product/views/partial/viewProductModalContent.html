@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+    <form ng-submit="cancel()" id="viewProductForm">
+        <b>Product details:</b>
+        <div class="form-group">
+            <span class="form-control" title="Name">
+                Name: {{data.product.name}}
+            </span>
+            <span class="form-control" title="Description">
+                Description: {{data.product.description}}
+            </span>
+            <span class="form-control" title="Description">
+                Price: {{data.product.price}}
+            </span>
+            <div class="form-control">Related Categories:
+                <span ng-repeat="category in data.product.categories"> 
+                    {{category.name}} 
+                </span>
+            </div>
+        </div>
+    </form>   
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="submit" form="viewProductForm" value="Submit">Ok</button>
+</div>
