@@ -1,0 +1,10 @@
+<span ng-repeat="module in data.modules">
+    <a href="{{ module.url }}" class="module-logo" title="{{ module.name }}">
+        <!-- Bootstrap Glyph icon !-->
+        <span class="{{ module.icon }} bg-{{ module.color }}"></span>
+        <h3>{{ module.name }}</h3>
+        <span class="description">
+            {{ module.description }}
+        </span>
+    </a>
+</span>

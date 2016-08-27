@@ -9,52 +9,32 @@
         'ngSanitize'
     ]);
     
-    myApp.controller('AdminMainController', ['$scope', '$http', '$location',
+    myApp.controller('UserMainController', ['$scope', '$http', '$location',
         function($scope, $http, $location) {
             $scope.data = {};        
             $scope.data.modules = [
                 {
                     'name': 'Home',
-                    'url': '/admin',
+                    'url': '/user',
                     'icon': 'glyphicon glyphicon-home',
                     'color': 'blue',
                     'description': 'Home page of syste'
                 },
                 {
                     'name': 'Products',
-                    'url': '/admin/product',
+                    'url': '/user/product',
                     'icon': 'glyphicon glyphicon-gift',
                     'color': 'red',
                     'description': 'Product page of syste'
                 },
                 {
                     'name': 'Categories',
-                    'url': '/admin/category',
+                    'url': '/user/category',
                     'icon': 'glyphicon glyphicon-th-list',
                     'color': 'green',
                     'description': 'Product page of syste'
-                },
-                {
-                    'name': 'UI',
-                    'url': '/admin/ui',
-                    'icon': 'glyphicon glyphicon-picture',
-                    'color': 'yellow',
-                    'description': 'UI page of syste'
-                },
-                {
-                    'name': 'Pages',
-                    'url': '/admin/page',
-                    'icon': 'glyphicon glyphicon-list-alt',
-                    'color': 'yellow',
-                    'description': 'Pages of syste'
-                },
-                {
-                    'name': 'Themes',
-                    'url': '/admin/theme',
-                    'icon': 'glyphicon glyphicon-picture',
-                    'color': 'yellow',
-                    'description': 'Themes of syste'
                 }
+                
             ];
            
     }]);
