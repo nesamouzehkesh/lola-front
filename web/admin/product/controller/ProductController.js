@@ -64,7 +64,7 @@
                               $scope.data.error = error;
                         });  
                 }, function() {
-                    console.log("Confirm dismissed!");
+                    //console.log("Confirm dismissed!");
                 });
         };    
         
@@ -76,9 +76,9 @@
             // Do appropriate job for the result of modal actions
             modalInstance.result.then(function (data) {
                 $scope.getProductList();
-                console.log('Modal colsed');
+                //console.log('Modal colsed');
             }, function () {
-                console.log('Modal dismissed');
+                //console.log('Modal dismissed');
             });
             
         };
@@ -93,9 +93,9 @@
                     
                     modalInstance.result.then(function (data) {
                         $scope.getProductList();
-                        console.log('Modal submited and colsed');
+                        //console.log('Modal submited and colsed');
                     }, function () {
-                        console.log('Modal dismissed at: ');
+                        //console.log('Modal dismissed at: ');
                     });
                 });          
         };
@@ -110,9 +110,9 @@
                     
                     modalInstance.result.then(function (data) {
                         $scope.getProductList();
-                        console.log('Modal submited and colsed');
+                        //console.log('Modal submited and colsed');
                     }, function () {
-                        console.log('Modal dismissed at: ');
+                        //console.log('Modal dismissed at: ');
                     });
                 });          
         };
@@ -143,7 +143,7 @@
                 //size: size,
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/partial/viewProductModalContent.html',
-                controller: 'ProductModalController',
+                controller: 'ViewProductModalController',
                 resolve: {
                   product: function () {
                     return data;

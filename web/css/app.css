@@ -575,6 +575,10 @@ button:active,
     content: " ...";
 }
 
+.dropdown a {
+    cursor: pointer;
+}
+
 .form-qty-small {
     width: 65px !important;
 }

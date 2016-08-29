@@ -2,26 +2,24 @@
     <h3 class="modal-title">I'm a modal!</h3>
 </div>
 <div class="modal-body">
-    <form ng-submit="cancel()" id="viewProductForm">
-        <b>Product details:</b>
-        <div class="form-group">
-            <span class="form-control" title="Name">
-                Name: {{data.product.name}}
+    <b>Product details:</b>
+    <div>
+        <span class="">
+            Name: {{data.product.name}}
+        </span> <br>
+        <span class="">
+            Description: {{data.product.description}}
+        </span> <br>
+        <span class="">
+            Price: {{data.product.price}}
+        </span> <br>
+        <div class="">Related Categories:
+            <span ng-repeat="category in data.product.categories"> 
+                {{category.name}} 
             </span>
-            <span class="form-control" title="Description">
-                Description: {{data.product.description}}
-            </span>
-            <span class="form-control" title="Description">
-                Price: {{data.product.price}}
-            </span>
-            <div class="form-control">Related Categories:
-                <span ng-repeat="category in data.product.categories"> 
-                    {{category.name}} 
-                </span>
-            </div>
         </div>
-    </form>   
+    </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="submit" form="viewProductForm" value="Submit">Ok</button>
+    <button class="btn btn-warning" type="button" ng-click="ok()">Ok</button>
 </div>

@@ -15,16 +15,7 @@
               .error(function (error) {
                 $scope.data.error = error;
             });
-            
-             // Get the product from backend
-            ProductApi.getProduct(product)
-              .success(function (data) {
-                $scope.data.product = data;
-              }) 
-              .error(function (error) {
-                $scope.data.error = error;
-            });
-            
+           
             $scope.postProduct = function (product) {
                 ProductApi.postProduct(product)
                     .success(function(data) {
