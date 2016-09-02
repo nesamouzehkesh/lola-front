@@ -71,7 +71,7 @@
         
         // Get list of products from backend
         $scope.getLabelList = function() {
-            LabelApi.getlabels($scope.data.search)
+            LabelApi.getLabels($scope.data.search)
               .success(function (data) {
                   $scope.data.labels = data;
               }) 
@@ -90,7 +90,7 @@
                 templateUrl: 'views/partial/labelModalContent.html',
                 controller: 'LabelModalController',
                 resolve: {
-                  product: function () {
+                  label: function () {
                     return data;
                   }
                 }

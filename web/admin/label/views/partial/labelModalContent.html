@@ -2,7 +2,7 @@
     <h3 class="modal-title">I'm a modal!</h3>
 </div>
 <div class="modal-body">
-    <form ng-submit="postLabel(data.label)" id="postPageFrom">
+    <form ng-submit="postLabel(data.label)" id="postLabelFrom">
         <b>Add a new label:</b>
         <input type="hidden" ng-model="data.label.id" />
         <fieldset class="form-group">
@@ -16,6 +16,6 @@
     </form>   
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="submit" form="postPageFrom" value="Submit">Save</button>
+    <button class="btn btn-primary" type="submit" form="postLabelFrom" value="Submit">Save</button>
     <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
 </div>
