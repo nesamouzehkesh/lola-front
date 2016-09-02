@@ -143,7 +143,7 @@
                 //size: size,
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/partial/viewProductModalContent.html',
-                controller: 'ViewProductModalController',
+                controller: 'ProductModalController',
                 resolve: {
                   product: function () {
                     return data;

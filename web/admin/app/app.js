@@ -54,7 +54,15 @@
                     'icon': 'glyphicon glyphicon-picture',
                     'color': 'yellow',
                     'description': 'Themes of syste'
+                },
+                {
+                    'name': 'Labels',
+                    'url': '/admin/label',
+                    'icon': 'glyphicon glyphicon-tags',
+                    'color': 'yellow',
+                    'description': 'Labels of syste'
                 }
+                
             ];
            
     }]);

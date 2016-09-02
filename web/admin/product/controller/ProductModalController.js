@@ -27,5 +27,9 @@
               $uibModalInstance.dismiss('cancel');
             };    
             
+            $scope.ok = function () {
+              $uibModalInstance.dismiss('cancel');
+            };
+            
         }]);    
 }) ();
