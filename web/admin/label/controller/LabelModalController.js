@@ -5,13 +5,14 @@
         function ($scope, LabelApi, $uibModalInstance, label) {
             $scope.data = {};
             $scope.data.label = label;
+            $scope.data.labels = {};
             
             $scope.postLabel = function (label) {
                 LabelApi.postLabel(label)
                     .success(function(data) {
                         $uibModalInstance.close(data); 
                     });
-            };               
+            };
 
             $scope.cancel = function () {
               $uibModalInstance.dismiss('cancel');

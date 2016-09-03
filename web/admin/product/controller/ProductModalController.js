@@ -1,11 +1,21 @@
 (function () {
     var myApp = angular.module('mainApp');
    
-    myApp.controller('ProductModalController', ['$scope', 'ProductApi', '$uibModalInstance', 'product',
-        function ($scope, ProductApi, $uibModalInstance, product) {
+    myApp.controller('ProductModalController', ['$scope', 'ProductApi', 'LabelApi', '$uibModalInstance', 'product',
+        function ($scope, ProductApi, LabelApi, $uibModalInstance, product) {
             $scope.data = {};
             $scope.data.product = product;
             $scope.data.categories = [];
+            $scope.data.labels = [];
+            
+            // Get list of labels from backend
+            LabelApi.getLabels()
+              .success(function (data) {
+                  $scope.data.labels = data;
+              }) 
+              .error(function (error) {
+                    $scope.data.error = error;
+              });
             
             // Get list of categories from backend
             ProductApi.getCategories()
