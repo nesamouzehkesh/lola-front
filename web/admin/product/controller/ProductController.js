@@ -10,18 +10,7 @@
             $scope.currentPage = 1;
             $scope.pageSize = 10;
             $scope.data.products = [];
-            $scope.data.categories = [];
-            
            
-                       
-            // Get list of categories from backend
-            ProductApi.getCategories()
-              .success(function (data) {
-                $scope.data.categories = data;
-              }) 
-              .error(function (error) {
-                $scope.data.error = error;
-            });
             
             // Load list of products 
             $scope.getProductList();

@@ -7,18 +7,7 @@
         $scope.data.label = {};
         $scope.currentPage = 1;
         $scope.pageSize = 10;
-        $scope.data.labels = [];
 
-        
-        // Get list of labels from backend
-        LabelApi.getLabels()
-          .success(function (data) {
-              $scope.data.labels = data;
-          }) 
-          .error(function (error) {
-                $scope.data.error = error;
-          });
-          
         // View label
         $scope.viewLabel = function (label) {
             // First get label full information from back-end
