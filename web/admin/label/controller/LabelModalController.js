@@ -5,7 +5,7 @@
         function ($scope, LabelApi, $uibModalInstance, label) {
             $scope.data = {};
             $scope.data.label = label;
-            $scope.data.labels = {};
+            
             
             $scope.postLabel = function (label) {
                 LabelApi.postLabel(label)

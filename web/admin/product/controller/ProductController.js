@@ -11,7 +11,6 @@
             $scope.pageSize = 10;
             $scope.data.products = [];
            
-            
             // Load list of products 
             $scope.getProductList();
         };
