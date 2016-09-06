@@ -45,9 +45,6 @@
             // Do appropriate job for the result of modal actions
             modalInstance.result.then(function (data) {
                 $scope.data.themes.push(data);
-                console.log('Modal colsed');
-            }, function () {
-                console.log('Modal dismissed');
             });
             
         };
@@ -62,9 +59,6 @@
                     
                     modalInstance.result.then(function (data) {
                         //TODO: update same theme in the $scope.data.themes
-                        console.log('Modal submited and colsed');
-                    }, function () {
-                        console.log('Modal dismissed at: ');
                     });
                 });          
         };
