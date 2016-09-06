@@ -8,26 +8,29 @@
         $scope.currentPage = 1;
         $scope.pageSize = 10;
         $scope.data.labels = [];
+        $scope.getLabelList();
         
-        // Get list of labels from backend
+        
+        //for initialization
         LabelApi.getLabels()
-          .success(function (data) {
-              $scope.data.labels = data;
-          }) 
-          .error(function (error) {
-                $scope.data.error = error;
-          });
+              .success(function (data) {
+                  $scope.data.labels = data;
+              }) 
+              .error(function (error) {
+                    $scope.data.error = error;
+              });
+        
           
         // Get list of labels from backend
-             $scope.getLabelList = function() {
-                 LabelApi.getLabels($scope.data.search)
-                   .success(function (data) {
-                       $scope.data.labels = data;
-                   }) 
-                   .error(function (error) {
-                         $scope.data.error = error;
-                   });
-             };
+        $scope.getLabelList = function() {
+            LabelApi.getLabels($scope.data.search)
+              .success(function (data) {
+                  $scope.data.labels = data;
+              }) 
+              .error(function (error) {
+                    $scope.data.error = error;
+              });
+        };
 
         // View label
         $scope.viewLabel = function (label) {
