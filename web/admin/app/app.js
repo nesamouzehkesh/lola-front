@@ -35,13 +35,6 @@
                     'description': 'Product page of syste'
                 },
                 {
-                    'name': 'UI',
-                    'url': '/admin/ui',
-                    'icon': 'glyphicon glyphicon-picture',
-                    'color': 'yellow',
-                    'description': 'UI page of syste'
-                },
-                {
                     'name': 'Pages',
                     'url': '/admin/page',
                     'icon': 'glyphicon glyphicon-list-alt',
