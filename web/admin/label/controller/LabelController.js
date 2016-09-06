@@ -3,6 +3,7 @@
     
     myApp.controller('LabelController', ['$scope', 'LabelApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, LabelApi, $location, $http, $uibModal, $ngBootbox) {
+        var init = function() {
         $scope.data = {}; 
         $scope.data.label = {};
         $scope.currentPage = 1;
@@ -10,6 +11,7 @@
         $scope.data.labels = [];
         $scope.getLabelList();
         
+        };
         
         //for initialization
         LabelApi.getLabels()
@@ -31,6 +33,9 @@
                     $scope.data.error = error;
               });
         };
+        
+        
+
 
         // View label
         $scope.viewLabel = function (label) {
@@ -120,7 +125,7 @@
             
             return modalInstance;
         }
-        
+        init();
         
     }]);     
 }) ();
