@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+    <form ng-submit="postUi(data.ui)" id="postUiFrom">
+        <b>Add a new UI:</b>
+        <input type="hidden" ng-model="data.ui.id" />
+        <fieldset class="form-group">
+            <textarea class="form-control" placeholder="UI Name" 
+                      title="Name"ng-model="data.ui.name"></textarea>
+        </fieldset>   
+    </form>   
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="submit" form="postUiFrom" value="Submit">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

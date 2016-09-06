@@ -81,9 +81,7 @@
                     
                     modalInstance.result.then(function (data) {
                         $scope.getProductList();
-                        //console.log('Modal submited and colsed');
                     }, function () {
-                        //console.log('Modal dismissed at: ');
                     });
                 });          
         };
