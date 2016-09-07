@@ -10,16 +10,27 @@
             $scope.currentPage = 1;
             $scope.pageSize = 10;
             $scope.data.products = [];
+            $scope.data.categories = [];
            
             // Load list of products 
             $scope.getProductList();
         };
         
+        // Get list of categories from backend
+          ProductApi.getCategories()
+            .success(function (data) {
+              $scope.data.categories = data;
+            }) 
+            .error(function (error) {
+              $scope.data.error = error;
+          });
+           
+        
         // Get list of products from backend
         $scope.getProductList = function() {
-            ProductApi.getProducts($scope.data.search)
-              .success(function (data) {
-                  $scope.data.products = data;
+            ProductApi.getProducts($scope.data.search) //we give $scope.data.search to the API
+              .success(function (data) {               //The API sends this par to backend and  
+                  $scope.data.products = data;         //backend uses it 
               }) 
               .error(function (error) {
                     $scope.data.error = error;
