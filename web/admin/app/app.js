@@ -45,15 +45,22 @@
                     'name': 'Themes',
                     'url': '/admin/theme',
                     'icon': 'glyphicon glyphicon-picture',
-                    'color': 'yellow',
+                    'color': 'blue',
                     'description': 'Themes of syste'
                 },
                 {
                     'name': 'Labels',
                     'url': '/admin/label',
                     'icon': 'glyphicon glyphicon-tags',
-                    'color': 'yellow',
+                    'color': 'red',
                     'description': 'Labels of syste'
+                },
+                {
+                    'name': 'Brands',
+                    'url': '/admin/brand',
+                    'icon': 'glyphicon glyphicon-record',
+                    'color': 'green',
+                    'description': 'Brands of syste'
                 }
                 
             ];
