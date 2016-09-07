@@ -11,11 +11,22 @@
             $scope.pageSize = 10;
             $scope.data.products = [];
             $scope.data.categories = [];
+            $scope.data.brands = [];
+            
            
             // Load list of products 
             $scope.getProductList();
         };
         
+        // Get list of brands from backend
+          ProductApi.getBrands()
+            .success(function (data) {
+              $scope.data.brands = data;
+            }) 
+            .error(function (error) {
+              $scope.data.error = error;
+          });
+          
         // Get list of categories from backend
           ProductApi.getCategories()
             .success(function (data) {
@@ -37,10 +48,17 @@
               });
         };
         
+        
         $scope.listCategoryItems = function(category) {
             $scope.data.search.category = category.id;
             $scope.getProductList();
         };
+        
+        $scope.listBrandProducts = function(brand) { //in brand tuye function(brand) ba un brand tuye $scope.data.search.brand yeki nistaaaaa! lol
+            $scope.data.search.brand = brand.id;
+            $scope.getProductList();
+        };
+        
         
         // Reset the search result
         $scope.resetSearchResult = function() {
@@ -152,7 +170,5 @@
         }
         
         init();
-    }]);    
-
- 
+    }]);     
 }) ();

@@ -23,6 +23,9 @@
             },
             getLabels: function() {
                 return $http.get('http://lola-rest.com/api/admin/label/labels');
+            },
+            getBrands: function() {
+                return $http.get('http://lola-rest.com/api/admin/brand/brands');
             }
         };
     }]);
