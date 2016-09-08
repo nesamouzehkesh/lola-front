@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+    <b>Customer details:</b>
+    <div>
+        <span class="">
+            ID: {{data.customer.id}}
+        </span> <br>
+        <span class="">
+            Name: {{data.customer.firstName}}
+        </span> <br>
+        <span class="">
+            Name: {{data.customer.lastName}}
+        </span> 
+        <span class="">
+            Name: {{data.customer.email}}
+        </span> 
+        <span class="">
+            Name: {{data.customer.phone}}
+        </span>
+        
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Ok</button>
+</div>

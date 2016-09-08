@@ -61,6 +61,13 @@
                     'icon': 'glyphicon glyphicon-record',
                     'color': 'green',
                     'description': 'Brands of syste'
+                },
+                {
+                    'name': 'Customers',
+                    'url': '/admin/customer',
+                    'icon': 'glyphicon glyphicon-user',
+                    'color': 'yellow',
+                    'description': 'Customers of syste'
                 }
                 
             ];
