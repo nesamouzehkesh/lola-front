@@ -8,18 +8,19 @@
             ID: {{data.customer.id}}
         </span> <br>
         <span class="">
-            Name: {{data.customer.firstName}}
+            Name: {{data.customer.firstName}}  {{data.customer.lastName}}
         </span> <br>
         <span class="">
-            Name: {{data.customer.lastName}}
-        </span> 
+            Email: {{data.customer.email}} 
+        </span> <br>
         <span class="">
-            Name: {{data.customer.email}}
-        </span> 
-        <span class="">
-            Name: {{data.customer.phone}}
-        </span>
-        
+            Phone Number: {{data.customer.phoneNumber}} 
+        </span> <br>
+        <div class="">Customer Orders:
+            <span ng-repeat="order in data.customer.orders"> 
+                {{order.id}} 
+            </span>
+        </div>
     </div>
 </div>
 <div class="modal-footer">

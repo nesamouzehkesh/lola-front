@@ -12,8 +12,11 @@
             getCustomer: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/customer/customer/' + id); 
             },
-             postCustomer: function(customer) { 
+            postCustomer: function(customer) { 
                 return $http.post('http://lola-rest.com/api/admin/customer/customer', {customer: customer});
+            },
+            getOrders: function() {
+                return $http.get('http://lola-rest.com/api/admin/order/orders');
             }
         };
     }]);
