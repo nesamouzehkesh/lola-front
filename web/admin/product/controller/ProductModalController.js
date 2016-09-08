@@ -7,6 +7,7 @@
             $scope.data.product = product;
             $scope.data.categories = [];
             $scope.data.labels = [];
+            $scope.data.brands = [];
             
             // Get list of labels from backend
             LabelApi.getLabels()
@@ -15,7 +16,16 @@
               }) 
               .error(function (error) {
                     $scope.data.error = error;
-              });
+            });
+            
+            // Get list of brands from backend
+            ProductApi.getBrands()
+              .success(function (data) {
+                $scope.data.brands = data;
+              }) 
+              .error(function (error) {
+                $scope.data.error = error;
+            });
             
             // Get list of categories from backend
             ProductApi.getCategories()

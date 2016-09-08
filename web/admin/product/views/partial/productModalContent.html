@@ -40,6 +40,17 @@
             </ui-select>
         </fieldset>
         
+        <fieldset class="form-group">
+            <ui-select ng-model="data.product.brand">
+                <ui-select-match placeholder="Product Brand">
+                    {{ $item.name }}
+                </ui-select-match>
+                <ui-select-choices repeat="item in (data.brands | filter: $select.search) track by item.id">
+                    <span ng-bind="item.name"></span>
+                </ui-select-choices>
+            </ui-select>
+        </fieldset>
+        
     </form>   
 </div>
 <div class="modal-footer">

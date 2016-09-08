@@ -36,7 +36,6 @@
               $scope.data.error = error;
           });
            
-        
         // Get list of products from backend
         $scope.getProductList = function() {
             ProductApi.getProducts($scope.data.search) //we give $scope.data.search to the API
