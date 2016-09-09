@@ -16,11 +16,12 @@
         <span class="">
             Phone Number: {{data.customer.phoneNumber}} 
         </span> <br>
-        <div class="">Customer Orders:
-            <span ng-repeat="order in data.customer.orders"> 
-                {{order.id}} 
-            </span>
-        </div>
+        <span class="">Customer Orders:
+            <div class="btn-group-vertical" 
+                 ng-repeat="order in data.customer.orders"> 
+                <button type="button" ng-click="listOrderDetails(order)">{{order.id}}</button>
+            </div>
+        </span>
     </div>
 </div>
 <div class="modal-footer">

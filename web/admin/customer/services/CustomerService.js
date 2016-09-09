@@ -17,6 +17,9 @@
             },
             getOrders: function() {
                 return $http.get('http://lola-rest.com/api/admin/order/orders');
+            },
+            getOrderDetails: function(criteria) {
+                return $http.get('http://lola-rest.com/api/admin/order/orderDetails', {params: criteria});
             }
         };
     }]);
