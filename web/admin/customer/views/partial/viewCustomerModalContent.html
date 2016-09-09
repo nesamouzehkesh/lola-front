@@ -22,6 +22,14 @@
                 <button type="button" ng-click="listOrderDetails(order)">{{order.id}}</button>
             </div>
         </span>
+        <span ng-show ="data.visible" class="">Order Details:
+            <div class="btn-group-vertical" ng-repeat="orderDetail in data.order.orderDetails"> 
+                <span> {{orderDetail.id}} </span> <br>
+                <span> {{orderDetail.comment}} </span> <br>
+                <span> {{orderDetail.status}} </span> 
+                <a ng-click="data.hideOrderDetails()">Hide</a>
+            </div>
+        </span>
     </div>
 </div>
 <div class="modal-footer">

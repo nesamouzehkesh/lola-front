@@ -7,10 +7,12 @@
             $scope.data.customer = customer;
             $scope.data.orders = [];
             $scope.data.orderDetails = [];
+            $scope.data.visible;
             
             $scope.listOrderDetails = function(order) {
-            $scope.data.order.id = order.id;
+            $scope.data.order.id = order.id; //in chie?
             $scope.getOrderDetails();
+            $scope.data.visible = true; 
               };
               
             $scope.getOrderDetails = function() {
@@ -22,6 +24,12 @@
                         $scope.data.error = error;
                   });
             };  
+            
+            $scope.hideOrderDetails = function() {
+                $scope.data.visible = null;
+            };
+              
+            
             
             // Get list of orders from backend
             CustomerApi.getOrders()
