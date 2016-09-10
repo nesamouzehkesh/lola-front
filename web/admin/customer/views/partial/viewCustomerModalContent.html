@@ -16,18 +16,23 @@
         <span class="">
             Phone Number: {{data.customer.phoneNumber}} 
         </span> <br>
-        <span class="">Customer Orders:
-            <div class="btn-group-vertical" 
-                 ng-repeat="order in data.customer.orders"> 
-                <button type="button" ng-click="listOrderDetails(order)">{{order.id}}</button>
-            </div>
+        <span class="">
+            Customer Orders:
+            <div class="list-group">
+              <a ng-repeat="order in data.customer.orders" ng-click="getOrderDetails(order)" class="list-group-item">
+                  #{{order.id}} {{order.orderDate}}
+              </a>
+            </div>            
         </span>
-        <span ng-show ="data.visible" class="">Order Details:
-            <div class="btn-group-vertical" ng-repeat="orderDetail in data.order.orderDetails"> 
-                <span> {{orderDetail.id}} </span> <br>
-                <span> {{orderDetail.comment}} </span> <br>
-                <span> {{orderDetail.status}} </span> 
-                <a ng-click="data.hideOrderDetails()">Hide</a>
+        <span ng-show="data.visible" class=""> 
+            <span style="font-weight: bold;"> Order Details: </span> <br>
+            <div class="btn-group-vertical" ng-repeat="orderDetail in data.orderDetails"> 
+                <span> Order ID: {{orderDetail.id}} </span> <br>
+                <span> Order Quantity: {{orderDetail.quantity}} </span> <br>
+                <span> Comments: {{orderDetail.comment}} </span> <br>
+                <span> Product: {{orderDetail.product}} </span> <br>
+
+                <a ng-click="hideOrderDetails()">Hide order details</a>
             </div>
         </span>
     </div>

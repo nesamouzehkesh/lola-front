@@ -300,6 +300,10 @@ input:focus {
     color: #fff;
 }
 
+a {
+    cursor: pointer;
+}
+
 .btnr {
     float: left;
     display: block;
