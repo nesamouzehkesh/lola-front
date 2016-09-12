@@ -26,13 +26,15 @@
         </span>
         <span ng-show="data.visible" class=""> 
             <span style="font-weight: bold;"> Order Details: </span> <br>
-            <div class="btn-group-vertical" ng-repeat="orderDetail in data.orderDetails"> 
+            <div ng-repeat="orderDetail in data.orderDetails"> 
                 <span> Order ID: {{orderDetail.id}} </span> <br>
                 <span> Order Quantity: {{orderDetail.quantity}} </span> <br>
                 <span> Comments: {{orderDetail.comment}} </span> <br>
                 <span> Product: {{orderDetail.product}} </span> <br>
+                <span> Status: {{orderDetail.status}} </span> <br>
 
-                <a ng-click="hideOrderDetails()">Hide order details</a>
+
+                <a ng-click="hideOrderDetails()" style="float: right;">Hide order details</a>
             </div>
         </span>
     </div>

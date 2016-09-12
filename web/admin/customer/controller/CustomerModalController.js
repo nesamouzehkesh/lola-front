@@ -1,14 +1,16 @@
 (function () {
     var myApp = angular.module('mainApp');
    
-    myApp.controller('CustomerModalController', ['$scope', 'CustomerApi', '$uibModalInstance', 'customer',
-        function ($scope, CustomerApi, $uibModalInstance, customer) {
+    myApp.controller('CustomerModalController', ['$scope', 'CustomerApi', '$uibModalInstance', 'customer', 'customerId',
+        function ($scope, CustomerApi, $uibModalInstance, customer, customerId) {
             $scope.data = {};
             $scope.data.customer = customer;
             $scope.data.orders = [];
             $scope.data.orderDetails = [];
             $scope.data.visible;
             $scope.data.order = {};
+            
+            console.log(customerId);
             
             $scope.getOrderDetails = function(order) {
                 CustomerApi.getOrderDetails(order.id) 
