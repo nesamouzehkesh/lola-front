@@ -23,6 +23,9 @@
             },
             deleteOrder: function(id) {
                 return $http.delete('http://lola-rest.com/api/admin/order/order/' + id);
+            },
+            getCustomerOrders: function(id) {
+                return $http.get('http://lola-rest.com/api/admin/order/customer-orders/' + id);
             }
         };
     }]);

@@ -13,7 +13,7 @@
             console.log(customerId);
             
             $scope.getCustomerOrders = function () {
-                CustomerApi.getOrders(customer.id)
+                CustomerApi.getCustomerOrders()
                   . success(function(data) {
                       $scope.data.orders = data;   
                 })
@@ -24,9 +24,9 @@
             
             $scope.deleteOrder = function (order) {
                 CustomerApi.deleteOrder(order.id)
-                  .success(function (data) {                
-                      $scope.getCustomerOrders = data;
-                  }) 
+                  .success(function () {
+                            $scope.getCustomerOrders($scope.data.customer.id);
+                        }) 
                   .error(function (error) {
                         $scope.data.error = error;
                   });            
