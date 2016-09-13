@@ -3,19 +3,19 @@
    
     myApp.controller('CustomerModalController', ['$scope', 'CustomerApi', '$uibModalInstance', 'customer', 'customerId',
         function ($scope, CustomerApi, $uibModalInstance, customer, customerId) {
-            $scope.data = {};
-            $scope.data.customer = customer;
-            $scope.data.orders = [];
-            $scope.data.orderDetails = [];
-            $scope.data.visible;
-            $scope.data.order = {};
-            
-            console.log(customerId);
+            function init() {
+                $scope.data = {};
+                $scope.data.customer = customer;
+                $scope.data.orderDetails = [];
+                $scope.data.visible;
+                $scope.data.order = {};
+                $scope.getCustomerOrders();
+            };
             
             $scope.getCustomerOrders = function () {
-                CustomerApi.getCustomerOrders()
-                  . success(function(data) {
-                      $scope.data.orders = data;   
+                CustomerApi.getCustomerOrders($scope.data.customer.id)
+                  .success(function(data) {
+                      $scope.data.customer.orders = data;   
                 })
                   .error(function (error) {
                         $scope.data.error = error;
@@ -25,7 +25,7 @@
             $scope.deleteOrder = function (order) {
                 CustomerApi.deleteOrder(order.id)
                   .success(function () {
-                            $scope.getCustomerOrders($scope.data.customer.id);
+                        $scope.getCustomerOrders();
                         }) 
                   .error(function (error) {
                         $scope.data.error = error;
@@ -68,6 +68,8 @@
 
             $scope.cancel = function () {
               $uibModalInstance.dismiss('cancel');
-            };           
+            };     
+            
+            init();
         }]);    
 }) ();

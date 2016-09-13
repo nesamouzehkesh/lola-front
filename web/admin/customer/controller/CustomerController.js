@@ -4,24 +4,13 @@
     myApp.controller('CustomerController', ['$scope', 'CustomerApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, CustomerApi, $location, $http, $uibModal, $ngBootbox) {
         var init = function() {
-        $scope.data = {}; 
-        $scope.data.customer = {};
-        $scope.currentPage = 1;
-        $scope.pageSize = 10;
-        $scope.data.customers = [];
-        $scope.getCustomerList();
-        
+            $scope.data = {}; 
+            $scope.data.customer = {};
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
+            $scope.data.customers = [];
+            $scope.getCustomerList();
         };
-        
-        //for initialization
-        CustomerApi.getCustomers()
-              .success(function (data) {
-                  $scope.data.customers = data;
-              }) 
-              .error(function (error) {
-                    $scope.data.error = error;
-              });
-        
           
         // Get list of customers from backend
         $scope.getCustomerList = function() {
