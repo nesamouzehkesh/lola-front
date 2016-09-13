@@ -12,6 +12,26 @@
             
             console.log(customerId);
             
+            $scope.getCustomerOrders = function () {
+                CustomerApi.getOrders(customer.id)
+                  . success(function(data) {
+                      $scope.data.orders = data;   
+                })
+                  .error(function (error) {
+                        $scope.data.error = error;
+                  });         
+            };
+            
+            $scope.deleteOrder = function (order) {
+                CustomerApi.deleteOrder(order.id)
+                  .success(function (data) {                
+                      $scope.getCustomerOrders = data;
+                  }) 
+                  .error(function (error) {
+                        $scope.data.error = error;
+                  });            
+            };
+            
             $scope.getOrderDetails = function(order) {
                 CustomerApi.getOrderDetails(order.id) 
                   .success(function (data) {                

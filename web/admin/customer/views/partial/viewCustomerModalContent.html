@@ -19,11 +19,16 @@
         <span class="">
             Customer Orders:
             <div class="list-group">
-              <a ng-repeat="order in data.customer.orders" ng-click="getOrderDetails(order)" class="list-group-item">
-                  #{{order.id}} {{order.orderDate}}
-              </a>
+              <span ng-repeat="order in data.customer.orders"  class="list-group-item">
+                  <a ng-click="getOrderDetails(order)">#{{order.id}}{{order.orderDate}}</a>
+                  <button type="button" class="pull-right"  ng-click="deleteOrder(order)">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        Delete
+                  </button>
+              </span>
             </div>            
         </span>
+        
         <span ng-show="data.visible" class=""> 
             <span style="font-weight: bold;"> Order Details: </span> <br>
             <div ng-repeat="orderDetail in data.orderDetails"> 
@@ -34,7 +39,7 @@
                 <span> Status: {{orderDetail.status}} </span> <br>
 
 
-                <a ng-click="hideOrderDetails()" style="float: right;">Hide order details</a>
+                <a ng-click="hideOrderDetails()" style="float: right;">Hide</a>
             </div>
         </span>
     </div>
