@@ -16,7 +16,7 @@
         $scope.getCustomerList = function() {
             CustomerApi.getCustomers()
               .success(function (data) {
-                  $scope.data.Customerss = data;
+                  $scope.data.customers = data;
               }) 
               .error(function (error) {
                     $scope.data.error = error;
@@ -63,9 +63,7 @@
                     
                     modalInstance.result.then(function (data) {
                         $scope.getCustomerList();
-                        console.log('Modal submited and colsed');
-                    }, function () {
-                        console.log('Modal dismissed at: ');
+                        
                     });
                 });          
         };
