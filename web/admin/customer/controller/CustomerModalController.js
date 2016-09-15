@@ -1,8 +1,8 @@
 (function () {
     var myApp = angular.module('mainApp');
    
-    myApp.controller('CustomerModalController', ['$scope', 'CustomerApi', '$uibModalInstance', 'customer', 'customerId',
-        function ($scope, CustomerApi, $uibModalInstance, customer, customerId) {
+    myApp.controller('CustomerModalController', ['$scope', 'CustomerApi', '$uibModalInstance', 'customer',
+        function ($scope, CustomerApi, $uibModalInstance, customer) {
             function init() {
                 $scope.data = {};
                 $scope.data.customer = customer;

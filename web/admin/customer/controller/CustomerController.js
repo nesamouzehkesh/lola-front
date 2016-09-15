@@ -97,9 +97,6 @@
                 resolve: {
                   customer: function () { //we use resolver to inject objects of our need into the controller being used for the modal
                     return data;
-                  },
-                  customerId: function() { //this example shows you can use as many as them as you like (to inject into the controller)
-                      return data.id;
                   }/*
                    * , customerName: function() {
                    * return data.name;
