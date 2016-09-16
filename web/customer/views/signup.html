@@ -1,0 +1,21 @@
+<form ng-submit="postCustomer(data.customer)" id="postCustomerForm">
+    <b>Add a new customer:</b>
+    <input type="hidden" ng-model="data.customer.id" />
+    <fieldset class="form-group">
+        <input class="form-control" placeholder="Customer First Name" 
+                  title="Name"ng-model="data.customer.firstName"/>
+    </fieldset>   
+    <fieldset class="form-group">
+        <input class="form-control" placeholder="Customer Last Name" 
+                  title="Name"ng-model="data.customer.lastName"/>
+    </fieldset>
+    <fieldset class="form-group">
+        <input class="form-control" placeholder="Customer Email Address" 
+                  title="Name"ng-model="data.customer.email"/>
+    </fieldset>
+    <fieldset class="form-group">
+        <input class="form-control" placeholder="Customer Phone number" 
+                  title="Name"ng-model="data.customer.phoneNumber"/>
+    </fieldset>
+    <button class="btn btn-primary" type="submit" form="postCustomerForm" value="Submit">Save</button>
+</form>
