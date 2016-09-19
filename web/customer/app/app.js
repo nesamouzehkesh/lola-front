@@ -9,9 +9,45 @@
         'ngSanitize'
     ]);
     
-    myApp.controller('UserMainController', ['$scope', '$http', '$location',
+    myApp.controller('CustomerMainController', ['$scope', '$http', '$location',
         function($scope, $http, $location) {
-            $scope.data = {};        
+            $scope.data = {}; 
+            $scope.data.navLeftItems = [
+             {
+                 'name': 'Shop',
+                 'url': '/views/shop'
+             },
+             {
+                 'name': 'Women',
+                 'url': '/views/women'
+             },
+             {
+                 'name': 'Men',
+                 'url': '/views/men'
+             },
+             {
+                 'name': 'Beauty',
+                 'url': '/views/beauty'
+             },
+             {
+                 'name': 'Sale',
+                 'url': '/views/sale'
+             }
+         ];
+         $scope.data.navRightItems = [
+             {
+                 'name': 'SignIn',
+                 'url': 'views/signIn'
+             },
+             {
+                 'name': 'ShoppingCart',
+                 'url': '/views/shoppingCart'
+             },
+             {
+                 'name': 'Contact',
+                 'url': '/views/contact'
+             }
+         ];
     }]);
 
 
@@ -27,13 +63,5 @@
         $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';        
     }]);
 
-    myApp.directive('backImg', function(){
-        return function(scope, element, attrs){
-            attrs.$observe('backImg', function(value) {
-                element.css({
-                    'background-image': 'url(' + value + ')'
-                });
-            });
-        };
-    });
+  
 }) ();

@@ -11,6 +11,9 @@
             },
              postBrand: function(brand) { 
                 return $http.post('http://lola-rest.com/api/admin/brand/brand', {brand: brand});
+            },
+            getBrand: function(id) {
+                return $http.get('http://lola-rest.com/api/admin/brand/brand/' + id); 
             }
         };
     }]);
