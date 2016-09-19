@@ -98,6 +98,19 @@
             
             return modalInstance;
         }
+        
+        // Add new brand
+        $scope.addBrand = function () {
+            // Get modal instance
+            var modalInstance = openBrandModal({}); //openLabelModal does the job!
+            
+            // Do appropriate job for the result of modal actions
+            modalInstance.result.then(function (data) {
+                $scope.getBrandList();
+            }, function () {
+            });
+            
+        };
           
     
         init();
