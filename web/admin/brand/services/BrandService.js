@@ -14,6 +14,9 @@
             },
             getBrand: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/brand/brand/' + id); 
+            },
+             deleteBrand: function(id) {
+                return $http.delete('http://lola-rest.com/api/admin/brand/brand/' + id);
             }
         };
     }]);

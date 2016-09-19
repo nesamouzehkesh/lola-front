@@ -111,6 +111,23 @@
             });
             
         };
+        
+        // Delete a brand   
+        $scope.deleteBrand = function(brand) {
+            // Show confirmation message before deleting an item
+            $ngBootbox.confirm("Are you sure you want to delete this Succession Plan?")
+                // If user confirmed
+                .then(function() {
+                    BrandApi.deleteBrand(brand.id)
+                        .success(function () {
+                            $scope.data.brands.splice($scope.data.brands.indexOf(brand), 1);
+                        }) 
+                        .error(function (error) {
+                              $scope.data.error = error;
+                        });  
+                }, function() {
+                });
+        };   
           
     
         init();
