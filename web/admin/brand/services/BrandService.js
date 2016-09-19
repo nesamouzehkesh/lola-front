@@ -9,7 +9,7 @@
             getBrands: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/brand/brands', {params: {id: id}}); 
             },
-             postBrand: function(brand) { 
+            postBrand: function(brand) { 
                 return $http.post('http://lola-rest.com/api/admin/brand/brand', {brand: brand});
             },
             getBrand: function(id) {
