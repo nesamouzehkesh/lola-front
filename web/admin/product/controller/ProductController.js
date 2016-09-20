@@ -12,11 +12,28 @@
             $scope.data.products = [];
             $scope.data.categories = [];
             $scope.data.brands = [];
+            $scope.data.sortItems = [
+              'ID', 
+              'Name'
+            ];    
             
+            $scope.data.selectedSortCriteria = null;
            
             // Load list of products 
             $scope.getProductList();
         };
+        
+            $scope.sortItemsBy = function (sortCriteria) {
+                selectedSortCriteria = sortCriteria.toLowerCase();
+                ProductApi.getProducts($scope.data.selectedSortCriteria) 
+                  .success(function (data) {                 
+                    $scope.data.products = data;         
+                }) 
+                .error(function (error) {
+                  $scope.data.error = error;
+              });
+
+            };
         
         // Get list of brands from backend
           ProductApi.getBrands()
