@@ -8,7 +8,8 @@
 </div>
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6">
-     
+        
+        <!-- category select dropdown -->
         <div class="" style="float: left">
             <div class="btn-group"  uib-dropdown>
               <button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
@@ -42,9 +43,9 @@
             <form class="form-inline">
                 <div class="form-group">
                     <input type="text" ng-keydown="getProductList()"
-                    ng-model="data.search.searchText" required="required" class="form-control" placeholder="Search Text">
+                    ng-model="data.criteria.searchText" required="required" class="form-control" placeholder="Search Text">
                 </div>
-                <button class="btn btn-primary" ng-class="{'disabled': data.search.searchText === undefined}" ng-click="getProductList()">
+                <button class="btn btn-primary" ng-class="{'disabled': data.criteria.searchText === undefined}" ng-click="getProductList()">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
                 <button class="btn btn-primary" ng-click="resetSearchResult()">

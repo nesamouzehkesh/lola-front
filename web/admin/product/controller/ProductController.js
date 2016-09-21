@@ -6,7 +6,14 @@
         var init = function() {
             $scope.data = {};
             $scope.data.product = {};
-            $scope.data.search = {};
+            /*
+            $scope.data.criteria = {
+                category: 12,
+                brand: 1,
+                searchText: 'text'
+            };
+            */          
+            $scope.data.criteria = {};
             $scope.currentPage = 1;
             $scope.pageSize = 10;
             $scope.data.products = [];
@@ -17,23 +24,20 @@
               'Name'
             ];    
             
-            $scope.data.selectedSortCriteria = null;
-           
+            $scope.data.order = 'ASC';
             // Load list of products 
             $scope.getProductList();
         };
         
-            $scope.sortItemsBy = function (sortCriteria) {
-                selectedSortCriteria = sortCriteria.toLowerCase();
-                ProductApi.getProducts($scope.data.selectedSortCriteria) 
-                  .success(function (data) {                 
-                    $scope.data.products = data;         
-                }) 
-                .error(function (error) {
-                  $scope.data.error = error;
-              });
-
+        $scope.sortItemsBy = function (sortCriteria) {
+            $scope.data.order = ($scope.data.order === 'ASC')? 'DESC' : 'ASC';
+            $scope.data.criteria.selectedSortCriteria = {
+                sort: sortCriteria.toLowerCase(),
+                order: $scope.data.order
             };
+            
+            $scope.getProductList();
+        }; 
         
         // Get list of brands from backend
           ProductApi.getBrands()
@@ -55,7 +59,7 @@
            
         // Get list of products from backend
         $scope.getProductList = function() {
-            ProductApi.getProducts($scope.data.search) //we give $scope.data.search to the API
+            ProductApi.getProducts($scope.data.criteria) //we give $scope.data.criteria to the API
               .success(function (data) {               //The API sends this par to backend and  
                   $scope.data.products = data;         //backend uses it 
               }) 
@@ -64,21 +68,20 @@
               });
         };
         
-        
         $scope.listCategoryItems = function(category) {
-            $scope.data.search.category = category.id;
+            $scope.data.criteria.category = category.id;
             $scope.getProductList();
         };
         
-        $scope.listBrandProducts = function(brand) { //in brand tuye function(brand) ba un brand tuye $scope.data.search.brand yeki nistaaaaa! lol
-            $scope.data.search.brand = brand.id;
+        $scope.listBrandProducts = function(brand) { //in brand tuye function(brand) ba un brand tuye $scope.data.criteria.brand yeki nistaaaaa! lol
+            $scope.data.criteria.brand = brand.id;
             $scope.getProductList();
         };
         
         
         // Reset the search result
         $scope.resetSearchResult = function() {
-            $scope.data.search = {};
+            $scope.data.criteria = {};
             $scope.currentPage = 1;
             $scope.getProductList();
         };        
