@@ -14,38 +14,42 @@
             $scope.data = {}; 
             $scope.data.navLeftItems = [
              {
+                 'name': 'Home',
+                 'url': '/customer'
+             },   
+             {
                  'name': 'Shop',
-                 'url': '/views/shop'
+                 'url': '/customer/product'
              },
              {
                  'name': 'Women',
-                 'url': '/views/women'
+                 'url': '/customer/product/women'
              },
              {
                  'name': 'Men',
-                 'url': '/views/men'
+                 'url': '/customer/product/men'
              },
              {
                  'name': 'Beauty',
-                 'url': '/views/beauty'
+                 'url': '/product/beauty'
              },
              {
                  'name': 'Sale',
-                 'url': '/views/sale'
+                 'url': '/product/sale'
              }
          ];
          $scope.data.navRightItems = [
              {
-                 'name': 'SignIn',
-                 'url': 'views/signIn'
+                 'name': 'Sign In',
+                 'url': '/customer/customer_account/signin'
              },
              {
                  'name': 'ShoppingCart',
-                 'url': '/views/shoppingCart'
+                 'url': 'customer/basket/shoppingCart'
              },
              {
                  'name': 'Contact',
-                 'url': '/views/contact'
+                 'url': '/customer/contact'
              }
          ];
     }]);

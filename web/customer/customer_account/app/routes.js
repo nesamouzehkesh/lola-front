@@ -3,7 +3,7 @@
         .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $routeProvider.when("/", {
                 templateUrl: "views/home.html",
-                controller: "PageController"
+                controller: "CustomerMainController"
             });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);

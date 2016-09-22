@@ -1,24 +1,25 @@
   <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                 <ul class="nav navbar-nav navbar-right">
-                    <li ng-repeat="navLeftItem in navLeftItems">
-                        <a href="{{navLeftItem.url}}" class="" title="">{{navLeftItem.name}}</a>
-                    </li> 
-            </div>
-             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li ng-repeat="navRightItem in navRightItems">
-                        <a href="{{navRightItem.url}}" class="" title="">{{navRightItem.name}}</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-repeat="navLeftItem in data.navLeftItems">
+                <a href="{{navLeftItem.url}}" class="" title="">{{navLeftItem.name}}</a>
+            </li> 
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-repeat="navRightItem in data.navRightItems">
+                <a href="{{navRightItem.url}}" class="" title="">{{navRightItem.name}}</a>
+            </li>
+        </ul>
+    </div>
             
             <!-- /.navbar-collapse -->
-        </div>
+</div>
