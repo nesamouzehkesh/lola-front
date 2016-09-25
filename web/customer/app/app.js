@@ -19,23 +19,23 @@
              },   
              {
                  'name': 'Shop',
-                 'url': '/customer/product'
+                 'url': '/customer/product/#/shop'
              },
              {
                  'name': 'Women',
-                 'url': '/customer/product/women'
+                 'url': '/customer/product/#/women'
              },
              {
                  'name': 'Men',
-                 'url': '/customer/product/men'
+                 'url': '/customer/product/#/men'
              },
              {
                  'name': 'Beauty',
-                 'url': '/product/beauty'
+                 'url': '/customer/product/#/beauty'
              },
              {
                  'name': 'Sale',
-                 'url': '/product/sale'
+                 'url': '/customer/product/#/sale'
              }
          ];
          $scope.data.navRightItems = [
