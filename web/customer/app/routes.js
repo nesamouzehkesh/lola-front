@@ -6,15 +6,11 @@
                     templateUrl: "views/home.html"
                 })
 
-                .when("/customer/customer_account/signin", {
-                    templateUrl: "customer_account/views/signin.html"
-                })
-                .when("/shoppingcart", {
-                    templateUrl: "basket/views/shoppingcart.html"
-                })
                 .when("/contact", {
-                    templateUrl: "views/contact.html"
+                    templateUrl: "views/contact.html",
+                    controller: "CustomerMainController"
                 });
+               
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);
-})();    
+})();   
