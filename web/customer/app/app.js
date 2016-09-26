@@ -41,15 +41,15 @@
          $scope.data.navRightItems = [
              {
                  'name': 'Sign In',
-                 'url': '/customer/customer_account/signin'
+                 'url': '/customer/profile/#/signin'
              },
              {
-                 'name': 'ShoppingCart',
-                 'url': 'customer/basket/shoppingCart'
+                 'name': 'Shopping Cart',
+                 'url': 'customer/basket/#/shoppingcart'
              },
              {
                  'name': 'Contact',
-                 'url': '/customer/contact'
+                 'url': '/customer/#/contact'
              }
          ];
     }]);
