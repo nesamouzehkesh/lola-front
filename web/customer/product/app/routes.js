@@ -3,21 +3,16 @@
         .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $routeProvider.when("/", {
                 templateUrl: "views/home.html",
-                controller: "CustomerMainController"
+                controller: "HomeController"
             })
-            .when("/women", {
-                templateUrl: "views/partial/women.html"
+            .when("/:CATID", {
+                templateUrl: "views/products.html",
+                controller: "ProductsController"
             })
-            .when("/men", {
-                templateUrl: "views/partial/men.html"
-            })
-            .when("/beauty", {
-                templateUrl: "views/partial/beauty.html"
-            })
-            .when("/sale", {
-                templateUrl: "views/partial/sale.html"
-            })
-            ;
+            .when("/:CATID/:ID", {
+                templateUrl: "views/product.html",
+                controller: "ProductController"
+            });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);
 })();    

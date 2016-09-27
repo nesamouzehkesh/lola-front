@@ -25,73 +25,20 @@
 
     <!-- Page Features -->
     <div class="row text-center">
-
-        <div class="col-md-3 col-sm-6 hero-feature">
+        
+        <div class="col-md-3 col-sm-6 hero-feature" data-ng-repeat="category in data.categories">
             <div class="thumbnail">
-                <img src="http://fashionfilesmag.com/wp-content/uploads/2016/02/Fendi-800x500.jpg" alt="">
+                <img data-ng-src="/{{ category.img }}" alt="{{ category.name }}">
                 <div class="caption">
-                    <h3><a href='#/women'>Women</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <h3><a href='#/{{ category.url }}'>{{ category.name }}</a></h3>
+                    <p>{{ category.description }}</p>
                     <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        <a href='#/{{ category.url }}' class="btn btn-default">More Info</a>
                     </p>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://www.fashioniq.com/wp-content/uploads/2016/02/ETS_0467-800x500.jpg" alt="">
-                <div class="caption">
-                    <h3><a href='#/men'>Men</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSV-FY52KUwdYw-V5mIMPHzTEJ4w4rSzKSooyPR76r1ceY5tqKkmQ" alt="">
-                <div class="caption">
-                    <h3><a href='#/beauty'>Beauty</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://2.bp.blogspot.com/-9sLsnGQ4cR8/VeyrCk60qdI/AAAAAAAAKOw/vceit6DSmOM/s1600/london-edge-dolly-dotty-rockabilly-dresses.JPG" alt="">
-                <div class="caption">
-                    <h3><a href='#/sale'>Sale</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.row -->
 
     <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
-        </div>
-    </footer>
-
 </div>
 </div>
-<!-- /.container -->
