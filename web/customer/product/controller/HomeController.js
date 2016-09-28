@@ -6,7 +6,7 @@
         $scope.data = {}; 
         $scope.data.categories = [];
         
-        // Get list of pagess from backend
+        // Get list of categories from backend
         CategoryApi.getCategories()
           .success(function (data) {
               $scope.data.categories = data;

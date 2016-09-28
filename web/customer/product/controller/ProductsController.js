@@ -6,10 +6,10 @@
         $scope.data = {}; 
         
         var criteria = {
-            'categoryId': $routeParams.CATID
+            'categoryUrl': $routeParams.CATID
         };
         
-        // Get list of pagess from backend
+        // Get list of products from backend based on category id (our criteria)
         ProductApi.getProducts(criteria)
           .success(function (data) {
               $scope.data.products = data;

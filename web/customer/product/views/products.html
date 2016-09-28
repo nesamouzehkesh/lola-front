@@ -1,1 +1,9 @@
-Products
+<table class="table table-hover margin-top-20">
+    
+    <tr ng-repeat="product in data.products">
+        <td>{{product.name}}</td>
+        <td>
+            {{product.description}}
+        </td>
+    </tr>
+</table>
