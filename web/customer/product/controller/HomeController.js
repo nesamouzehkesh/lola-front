@@ -6,6 +6,7 @@
         $scope.data = {}; 
         $scope.data.categories = [];
         
+        
         // Get list of categories from backend
         CategoryApi.getCategories()
           .success(function (data) {
@@ -14,5 +15,6 @@
           .error(function (error) {
                 $scope.data.error = error;
           });
+       
     }]);     
 }) ();

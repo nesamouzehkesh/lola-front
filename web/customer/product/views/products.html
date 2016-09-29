@@ -1,9 +1,22 @@
-<table class="table table-hover margin-top-20">
     
-    <tr ng-repeat="product in data.products">
-        <td>{{product.name}}</td>
-        <td>
-            {{product.description}}
-        </td>
-    </tr>
-</table>
+  
+
+
+   <!-- products of the category -->
+    <div class="row text-center">
+        
+        <div class="col-md-3 col-sm-6 hero-feature" data-ng-repeat="product in data.products">
+            <div class="thumbnail">
+                <!-- <img data-ng-src="/{{ category.img }}" alt="{{ category.name }}"> -->
+                <div class="caption">
+                    
+                    <h3><a href='#/{{ data.catUrl }}/{{ product.id }}'>{{ product.name }}</a></h3>
+                   
+                </div>
+            </div>
+        </div>
+
+    <hr>
+</div>
+   
+   

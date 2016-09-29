@@ -3,10 +3,10 @@
     
     myApp.controller('ProductsController', ['$scope', '$routeParams', 'ProductApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, $routeParams, ProductApi, $location, $http, $uibModal, $ngBootbox) {
-        $scope.data = {}; 
-        
+        $scope.data = {};
+        $scope.data.catUrl = $routeParams.catUrl;
         var criteria = {
-            'categoryUrl': $routeParams.CATID
+            'categoryUrl': $routeParams.catUrl
         };
         
         // Get list of products from backend based on category id (our criteria)
@@ -17,5 +17,7 @@
           .error(function (error) {
                 $scope.data.error = error;
           });
+          
+       
     }]);     
 }) ();

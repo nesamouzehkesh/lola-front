@@ -5,11 +5,11 @@
                 templateUrl: "views/home.html",
                 controller: "HomeController"
             })
-            .when("/:CATID", {
+            .when("/:catUrl", {
                 templateUrl: "views/products.html",
                 controller: "ProductsController"
             })
-            .when("/:CATID/:ID", {
+            .when("/:catUrl/:ID", {
                 templateUrl: "views/product.html",
                 controller: "ProductController"
             });
