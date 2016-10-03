@@ -17,7 +17,15 @@
           .error(function (error) {
                 $scope.data.error = error;
           });
-          
+         
+        $scope.addToCart = function (product) {
+           ProductApi.addToCart(product)
+            .success(function (data) {
+            }) 
+            .error(function (error) {
+                  $scope.data.error = error;
+            });
+        };    
        
     }]);     
 }) ();
