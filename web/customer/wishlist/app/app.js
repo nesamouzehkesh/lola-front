@@ -1,5 +1,5 @@
 (function () {
     var myApp = angular.module('mainApp');
-    myApp.requires.push('BasketService');
+    myApp.requires.push('WishlistService');
 }) ();
 

@@ -12,10 +12,6 @@
             .when("/:catUrl/:ID", {
                 templateUrl: "views/product.html",
                 controller: "ProductController"
-            })
-            .when("/wishlist", {
-                templateUrl: "views/wishlist.html",
-                controller: "ProductController"
             });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);

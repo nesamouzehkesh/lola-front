@@ -45,7 +45,7 @@
              },
              {
                  'name': 'Shopping Cart',
-                 'url': '/customer/basket/#/shoppingcart'
+                 'url': '/customer/product/#/basket'
              },
              {
                  'name': 'Contact',
