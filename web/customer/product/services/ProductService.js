@@ -19,6 +19,13 @@
                 };
                 
                 return $http.post('http://lola-rest.com/api/customer/basket/items', {params: order}); 
+            },
+            addToWishlist: function(product) {
+                var item = {
+                  id: product.id
+                };
+                
+                return $http.post('http://lola-rest.com/api/customer/wishlist/items', {params: item}); 
             }
          };
     }]);

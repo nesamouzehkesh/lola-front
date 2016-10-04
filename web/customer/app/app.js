@@ -19,7 +19,7 @@
              },   
              {
                  'name': 'Shop',
-                 'url': '/customer/product/#/shop'
+                 'url': '/customer/product/#/'
              },
              {
                  'name': 'Women',
@@ -40,8 +40,8 @@
          ];
          $scope.data.navRightItems = [
              {
-                 'name': 'Sign In',
-                 'url': '/customer/profile/#/signin'
+                 'name': 'Wish List',
+                 'url': '/customer/product/#/wishlist'
              },
              {
                  'name': 'Shopping Cart',

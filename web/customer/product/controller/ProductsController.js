@@ -25,6 +25,15 @@
             .error(function (error) {
                   $scope.data.error = error;
             });
+        };
+        
+        $scope.addToWishlist = function (product) {
+           ProductApi.addToWishlist(product)
+            .success(function (data) {
+            }) 
+            .error(function (error) {
+                  $scope.data.error = error;
+            });
         };    
        
     }]);     
