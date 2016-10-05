@@ -41,11 +41,11 @@
          $scope.data.navRightItems = [
              {
                  'name': 'Wish List',
-                 'url': '/customer/product/#/wishlist'
+                 'url': '/customer/wishlist/#/wishlist'
              },
              {
                  'name': 'Shopping Cart',
-                 'url': '/customer/product/#/basket'
+                 'url': '/customer/basket/#/basket'
              },
              {
                  'name': 'Contact',

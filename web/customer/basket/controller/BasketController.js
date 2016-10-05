@@ -5,6 +5,7 @@
         function($scope, $routeParams, BasketApi, $location, $http, $uibModal, $ngBootbox) {
         $scope.data = {};
         
+        
         BasketApi.getBasketItems()
           .success(function (data) {
               $scope.data.basketItems = data;

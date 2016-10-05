@@ -1,2 +1,24 @@
 
-<br><br><br><br><br>basket<br><br><br><br><br><br><br><br>
+
+<table class="table table-hover margin-top-20">
+    <tr><th>Customer ID</th><th>Product</th><th>Quantity</th><th></th></tr>
+    <tr ng-repeat="item in data.basketItems">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>
+            <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                Delete
+            </button>
+            <div class="btn-group">
+                <label class="btn btn-default"
+                       ng-model="item.quantity"
+                       ng-repeat="n in ['1', '2', '3', '4', '5']" 
+                       uib-btn-radio="n" uncheckable>
+                    {{ n }}
+                </label>
+            </div>
+        </td>
+    </tr>
+</table>

@@ -6,8 +6,8 @@
     
     CustomerApiRequests.factory('BasketApi', ['$http', function($http) {
         return {
-            getBasketItems: function(criteria) {
-                return $http.get('http://lola-rest.com/api/customer/product/products', {params: criteria}); 
+            getBasketItems: function() {
+                return $http.get('http://lola-rest.com/api/customer/basket/items'); 
             }
             
          };
