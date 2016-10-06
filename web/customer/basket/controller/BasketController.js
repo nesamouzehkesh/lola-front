@@ -6,6 +6,7 @@
         $scope.data = {};
         
         
+        
         BasketApi.getBasketItems()
           .success(function (data) {
               $scope.data.basketItems = data;
@@ -30,7 +31,18 @@
                 }, function() {
                     console.log("Confirm dismissed!");
                 });
-        };    
+        };  
+        
+        $scope.updateItemQuantity = function(item){
+            BasketApi.updateItemQuantity(item)
+                .success(function(){
+                    $scope.data.basketItem = data;
+                })
+                .error(function(error){
+                    $scope.data.error = error;
+                });
+              
+        };
        
     }]);     
 }) ();

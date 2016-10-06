@@ -13,7 +13,7 @@
             </button>
             <div class="btn-group">
                 <label class="btn btn-default"
-                       ng-model="item.quantity"
+                       ng-model="item.quantity" ng-click="updateItemQuantity(item)"
                        ng-repeat="n in ['1', '2', '3', '4', '5']" 
                        uib-btn-radio="n" uncheckable>
                     {{ n }}
