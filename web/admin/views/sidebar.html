@@ -20,7 +20,7 @@
         <!-- End: Make a full list of modules -->
     </div>
     <div class="footer">
-        <a href="#logout">
+        <a href="#" ng-click="logout()">
             <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout
         </a>
     </div>           
@@ -42,4 +42,39 @@
         </span>
         <!-- End: Make a full list of modules -->
     </div>
+    <div class="footer">
+        <a href="#" ng-click="logout()">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        </a>
+    </div>     
 </div>
+
+<!--
+<script type="text/ng-template" id="login.html">
+    <div class="modal-header">
+        <h4 class="modal-title">Login required</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" role="form" ng-submit="submit(credentials)">
+            <div class="alert alert-danger" ng-if="errorMessage">
+                {{ errorMessage }}
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="credentials.username" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="submit(credentials)">Login</button>
+    </div>
+</script>  
+-->
