@@ -8,6 +8,9 @@
         return {
             getBasketItems: function() {
                 return $http.get('http://lola-rest.com/api/customer/basket/items'); 
+            },
+            deleteBasketItem: function(id) {
+                return $http.delete('http://lola-rest.com/api/customer/basket/item/' + id);
             }
             
          };

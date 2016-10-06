@@ -3,11 +3,11 @@
 <table class="table table-hover margin-top-20">
     <tr><th>Customer ID</th><th>Product</th><th>Quantity</th><th></th></tr>
     <tr ng-repeat="item in data.basketItems">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
+        <td>{{item.cid}}</td>
+        <td>#{{item.pid}}_{{item.name}}</td>
         <td>{{item.quantity}}</td>
         <td>
-            <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">
+            <button type="button" class="btn btn-danger" ng-click="deleteBasketItem(item)">
                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 Delete
             </button>
