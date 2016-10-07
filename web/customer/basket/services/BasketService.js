@@ -14,11 +14,13 @@
             },
             updateItemQuantity : function(item) {
                 var thisItemQuant = {
-                  id: item.id,
                   quantity: item.quantity
                 };
                 
-                return $http.post('http://lola-rest.com/api/customer/basket/item', {params: thisItemQuant}); 
+                return $http.post('http://lola-rest.com/api/customer/basket/items/' + item.id, {params: thisItemQuant}); 
+            },
+            submitOrder : function() {
+                return $http.post('http://lola-rest.com/api/customer/basket/order/'); 
             }
          };
     }]);

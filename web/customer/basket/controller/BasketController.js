@@ -21,7 +21,7 @@
             $ngBootbox.confirm("Are you sure you want to delete this Succession Plan?")
                 // If user confirmed
                 .then(function() {
-                    BasketApi.deleteBasketItem(item.pid)
+                    BasketApi.deleteBasketItem(item.id)
                         .success(function () {
                             $scope.data.basketItems.splice($scope.data.basketItems.indexOf(item), 1);
                         }) 
@@ -36,7 +36,18 @@
         $scope.updateItemQuantity = function(item){
             BasketApi.updateItemQuantity(item)
                 .success(function(){
-                    $scope.data.basketItem = data;
+                    // Noting to do
+                })
+                .error(function(error){
+                    $scope.data.error = error;
+                });
+              
+        };
+        
+        $scope.submitOrder = function(){
+            BasketApi.submitOrder()
+                .success(function(){
+                    // Noting to do
                 })
                 .error(function(error){
                     $scope.data.error = error;
