@@ -19,8 +19,8 @@
                 
                 return $http.post('http://lola-rest.com/api/customer/basket/items/' + item.id, {params: thisItemQuant}); 
             },
-            submitOrder : function() {
-                return $http.post('http://lola-rest.com/api/customer/basket/order'); 
+            submitOrder : function(address) {
+                return $http.post('http://lola-rest.com/api/customer/basket/order', {address: address}); 
             }
          };
     }]);

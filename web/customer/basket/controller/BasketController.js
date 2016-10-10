@@ -4,7 +4,9 @@
     myApp.controller('BasketController', ['$scope', '$routeParams', 'BasketApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, $routeParams, BasketApi, $location, $http, $uibModal, $ngBootbox) {
         $scope.data = {};
-        
+        $scope.data.SameAddress = false;
+        $scope.data.shipping.address = {};
+        $scope.data.billing.address = {};
         
         
         BasketApi.getBasketItems()
@@ -44,8 +46,8 @@
               
         };
         
-        $scope.submitOrder = function(){
-            BasketApi.submitOrder()
+        $scope.submitOrder = function(address){
+            BasketApi.submitOrder(address)
                 .success(function(){
                     // Noting to do
                 })

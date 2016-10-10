@@ -4,7 +4,11 @@
             $routeProvider.when("/", {
                 templateUrl: "views/basket.html",
                 controller: "BasketController"
-            });
+            })
+            .when("/shipping", {
+                    templateUrl: "views/shipping.html",
+                    controller: "CustomerMainController"
+                });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);
 })(); 
