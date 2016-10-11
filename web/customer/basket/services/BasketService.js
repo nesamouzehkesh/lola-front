@@ -9,6 +9,9 @@
             getBasketItems: function() {
                 return $http.get('http://lola-rest.com/api/customer/basket/items'); 
             },
+            getCustomerAddress: function () {
+                return $http.get('http://lola-rest.com/api/admin/order/shipping'); 
+            },
             deleteBasketItem: function(id) {
                 return $http.delete('http://lola-rest.com/api/customer/basket/items/' + id);
             },
@@ -19,8 +22,8 @@
                 
                 return $http.post('http://lola-rest.com/api/customer/basket/items/' + item.id, {params: thisItemQuant}); 
             },
-            submitOrder : function(address) {
-                return $http.post('http://lola-rest.com/api/customer/basket/order', {address: address}); 
+            submitOrder : function(params) {
+                return $http.post('http://lola-rest.com/api/admin/order/orders', {params: params}); 
             }
          };
     }]);

@@ -6,9 +6,9 @@
                 controller: "BasketController"
             })
             .when("/shipping", {
-                    templateUrl: "views/shipping.html",
-                    controller: "CustomerMainController"
-                });
+                templateUrl: "views/shipping.html",
+                controller: "ShippingController"
+            });
             $routeProvider.otherwise({ redirectTo: '/' });
         }]);
 })(); 

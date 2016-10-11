@@ -1,4 +1,6 @@
 
+{{ data.address }}
+
 <div class="container">
     <h4>Your Shipping Address is:</h4> 
     <!-- Shipping Form: -->
@@ -6,11 +8,11 @@
         <div class="form-group">
             <label for="streetName">Street</label>
             <input type="text" class="form-control" id="streetName" placeholder="Your Street Name"
-                   ng-model="data.address.shipping.street">
+                   ng-model="data.address.newShipping.street">
         </div>
         <div class="form-group">
             <label for="stateName">State</label>
-            <select class="form-control"  id="stateName" ng-model="data.address.shipping.state">
+            <select class="form-control"  id="stateName" ng-model="data.address.newShipping.state">
                 <option>NSW</option>
                 <option>ACT</option>
                 <option>VIC</option>
@@ -20,17 +22,17 @@
         <div class="form-group">
             <label for="cityName">Street</label>
             <input type="text" class="form-control" id="cityName" placeholder="Your City Name..."
-                   ng-model="data.address.shipping.city">
+                   ng-model="data.address.newShipping.city">
         </div>
         <div class="form-group">
             <label for="zipCode">Zip</label>
             <input type="text" class="form-control" id="zipCode" placeholder="Your Zip Number..."
-                   ng-model="data.address.shipping.zip">
+                   ng-model="data.address.newShipping.zip">
         </div>
         <div class="form-group">
             <label for="countryName">Country</label>
             <input type="text" class="form-control" id="countryName" placeholder="Your Country..."
-                   ng-model="data.address.shipping.country">
+                   ng-model="data.address.newShipping.country">
         </div>
         <div class="checkbox">
             <label>
@@ -56,11 +58,11 @@
         <div class="form-group" >
             <label for="streetName">Street</label>
             <input type="text" class="form-control" id="streetName" placeholder="Your Street Name..."
-                   ng-model="data.address.billing.street">
+                   ng-model="data.address.newBilling.street">
         </div>
         <div class="form-group" >
             <label for="stateName">State</label>
-            <select class="form-control"  id="stateName" ng-model="data.address.billing.state">
+            <select class="form-control"  id="stateName" ng-model="data.address.newBilling.state">
                 <option>NSW</option>
                 <option>ACT</option>
                 <option>VIC</option>
@@ -70,21 +72,21 @@
         <div class="form-group" >
             <label for="cityName">City</label>
             <input type="text" class="form-control" id="cityName" placeholder="Your City Name..."
-                   ng-model="data.address.billing.city">
+                   ng-model="data.address.newBilling.city">
         </div>
         <div class="form-group" >
             <label for="zipCode">Zip</label>
             <input type="text" class="form-control" id="zipCode" placeholder="Your Zip Number..."
-                   ng-model="data.address.billing.zip">
+                   ng-model="data.address.newBilling.zip">
         </div>
         <div class="form-group" >
             <label for="countryName">Country</label>
             <input type="text" class="form-control" id="countryName" placeholder="Your Country..."
-                   ng-model="data.address.billing.country">
+                   ng-model="data.address.newBilling.country">
         </div>
     </form>
     
-    <button type="submit" class="btn btn-default" ng-click="submitOrder(address)">
+    <button type="submit" class="btn btn-default" ng-click="submitOrder()">
         Go to payment</button>
 
 </div>
