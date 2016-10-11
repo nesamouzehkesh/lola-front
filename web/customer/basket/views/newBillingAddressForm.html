@@ -1,0 +1,82 @@
+<div id="shipping-form-container">
+        <div class="margin-bottom-10">
+            <strong>Billing address</strong>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group ">
+                    <span class="">
+                        <label for="streetName">Street:</label>
+                    </span>
+                    <input id="streetName" class="form-control" type="text" placeholder="Your Street Name"
+                           ng-model="data.address.newBilling.street"> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group ">
+                    <span class="">
+                        <label for="cityName">City:</label>
+                    </span>
+                    <input id="streetName" class="form-control" type="text" placeholder="Your City Name"
+                           ng-model="data.address.newSBilling.city"> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group ">
+                    <span class="">
+                        <label for="streetName">State:</label>
+                    </span>
+                    <input id="stateName" class="form-control" type="text" placeholder="Your State Name"
+                           ng-model="data.address.newBilling.state"> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group ">
+                    <span class="">
+                        <label for="zipNumber">Zip:</label>
+                    </span>
+                    <input id="zipNumber" class="form-control" type="text" placeholder="Your Zip Code"
+                           ng-model="data.address.newBilling.zip"> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group ">
+                    <span class="">
+                        <label for="countryName">Country:</label>
+                    </span>
+                    <input id="countryName" class="form-control" type="text" placeholder="Your Country Name"
+                           ng-model="data.address.newBilling.country"> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="checkbox">
+                    <label>
+                        <input id="ifSameAddress" type="checkbox" ng-model="data.address.sameAddress">
+                        <strong> Shipping address same as billing address?</strong>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="checkbox">
+                    <label>
+                        <input id="isPrimaryAddress" type="checkbox" ng-model="data.address.setNewBillingAsPrimary">
+                        <strong> Set this as primary address?</strong>
+                    </label>
+                </div>
+            </div>
+      </div>
+    
+</div>

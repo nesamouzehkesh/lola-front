@@ -4,21 +4,21 @@
     myApp.controller('ShippingController', ['$scope', '$routeParams', 'BasketApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, $routeParams, BasketApi, $location, $http, $uibModal, $ngBootbox) {
         var init = function() {
-        $scope.data = {};
-        $scope.data.address = {
-            shipping: {},
-            billing: {},
-            setNewShipping: false,
-            setNewShippingAsPrimary: false,
-            newShipping: {},
-            setNewBilling: false,
-            setNewBillingAsPrimary: false,
-            newBilling: {},
-            SameAddress: false
+            $scope.data = {};
+            $scope.data.address = {
+                shipping: {},
+                billing: {},
+                setNewShipping: false,
+                setNewShippingAsPrimary: false,
+                newShipping: {},
+                setNewBilling: false,
+                setNewBillingAsPrimary: false,
+                newBilling: {},
+                SameAddress: false
+            };
+
+            $scope.getCustomerAddress();
         };
-        
-        $scope.getCustomerAddress();
-        }
         
         $scope.getCustomerAddress = function(){
             BasketApi.getCustomerAddress()
