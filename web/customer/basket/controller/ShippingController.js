@@ -3,8 +3,8 @@
     
     myApp.controller('ShippingController', ['$scope', '$routeParams', 'BasketApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, $routeParams, BasketApi, $location, $http, $uibModal, $ngBootbox) {
+        var init = function() {
         $scope.data = {};
-        $scope.data.SameAddress = false;
         $scope.data.address = {
             shipping: {},
             billing: {},
@@ -13,8 +13,12 @@
             newShipping: {},
             setNewBilling: false,
             setNewBillingAsPrimary: false,
-            newBilling: {}
+            newBilling: {},
+            SameAddress: false
         };
+        
+        $scope.getCustomerAddress();
+        }
         
         $scope.getCustomerAddress = function(){
             BasketApi.getCustomerAddress()
@@ -38,6 +42,6 @@
                 });
               
         };
-       
+        init();
     }]);     
 }) ();

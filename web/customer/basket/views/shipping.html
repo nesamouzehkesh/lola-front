@@ -1,10 +1,19 @@
 
-{{ data.address }}
 
 <div class="container">
+    <!--Shipping -->
     <h4>Your Shipping Address is:</h4> 
-    <!-- Shipping Form: -->
-    <form id="shippingForm">
+    <div>
+        <span>Street: {{data.address.shipping.street}}</span><br>
+        <span>City: {{data.address.shipping.city}}</span><br>
+        <span>State: {{data.address.shipping.state}}</span><br>
+        <span>Zip: {{data.address.shipping.zip}}</span><br>
+        <span>Country: {{data.address.shipping.country}}</span><br>
+    </div>
+    <form>
+        <input type="checkbox" ng-model="data.address.setNewShipping">Set a new shipping address?<br>
+    </form> 
+    <form id="shippingForm" ng-show="data.address.setNewShipping">
         <div class="form-group">
             <label for="streetName">Street</label>
             <input type="text" class="form-control" id="streetName" placeholder="Your Street Name"
@@ -36,31 +45,39 @@
         </div>
         <div class="checkbox">
             <label>
-              <input type="checkbox" ng-model="data.address.giftwrap"> Do you want a giftwrap?
+              <input type="checkbox" ng-model="data.address.sameAddress"> Shipping address same as billing address?
             </label>
         </div>
+        <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-model="data.address.setNewShippingAsPrimary"> Set this as primary shipping address?
+            </label>
+        </div>
+        <br>
     </form>
     
     
-    <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="data.sameAddress"> Billing address same as shipping address?
-        </label>
+    
+    <!--Billing -->
+   <h4>Your Billing Address is:</h4> 
+    <div>
+        <span>Street: {{data.address.billing.street}}</span><br>
+        <span>City: {{data.address.billing.city}}</span><br>
+        <span>State: {{data.address.billing.state}}</span><br>
+        <span>Zip: {{data.address.billing.zip}}</span><br>
+        <span>Country: {{data.address.billing.country}}</span><br>
     </div>
-    <br>
-    
-    
-    <h4 ng-hide="data.sameAddress">Your Billing Address is:</h4> 
-        
-    
-    <!-- Billing Form: -->
-    <form id="billingForm" ng-hide="data.sameAddress">
-        <div class="form-group" >
+    <form>
+        <input type="checkbox" ng-model="data.address.setNewBilling">Set a new billing address?<br>
+    </form> 
+    <!-- Shipping Form: -->
+    <form id="billingForm" ng-show="data.address.setNewBilling">
+        <div class="form-group">
             <label for="streetName">Street</label>
-            <input type="text" class="form-control" id="streetName" placeholder="Your Street Name..."
+            <input type="text" class="form-control" id="streetName" placeholder="Your Street Name"
                    ng-model="data.address.newBilling.street">
         </div>
-        <div class="form-group" >
+        <div class="form-group">
             <label for="stateName">State</label>
             <select class="form-control"  id="stateName" ng-model="data.address.newBilling.state">
                 <option>NSW</option>
@@ -69,23 +86,33 @@
                 <option>SA</option>
             </select>        
         </div>
-        <div class="form-group" >
-            <label for="cityName">City</label>
+        <div class="form-group">
+            <label for="cityName">Street</label>
             <input type="text" class="form-control" id="cityName" placeholder="Your City Name..."
                    ng-model="data.address.newBilling.city">
         </div>
-        <div class="form-group" >
+        <div class="form-group">
             <label for="zipCode">Zip</label>
             <input type="text" class="form-control" id="zipCode" placeholder="Your Zip Number..."
                    ng-model="data.address.newBilling.zip">
         </div>
-        <div class="form-group" >
+        <div class="form-group">
             <label for="countryName">Country</label>
             <input type="text" class="form-control" id="countryName" placeholder="Your Country..."
                    ng-model="data.address.newBilling.country">
         </div>
+        <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-model="data.address.sameAddress"> Shipping address same as billing address?
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-model="data.address.setNewBillingAsPrimary"> Set this as primary shipping address?
+            </label>
+        </div>
+        <br>
     </form>
-    
     <button type="submit" class="btn btn-default" ng-click="submitOrder()">
         Go to payment</button>
 

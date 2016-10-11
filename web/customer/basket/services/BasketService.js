@@ -10,7 +10,7 @@
                 return $http.get('http://lola-rest.com/api/customer/basket/items'); 
             },
             getCustomerAddress: function () {
-                return $http.get('http://lola-rest.com/api/admin/order/shipping'); 
+                return $http.get('http://lola-rest.com/api/admin/customer/shipping'); 
             },
             deleteBasketItem: function(id) {
                 return $http.delete('http://lola-rest.com/api/customer/basket/items/' + id);
