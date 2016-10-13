@@ -8,7 +8,7 @@
           
             OrderApi.getOrderDetails(order.id)
                 .success(function(data) {
-                    $scope.data.order.orderDetails = data;
+                    $scope.data.order = data;
                 });
 
             $scope.cancel = function () {

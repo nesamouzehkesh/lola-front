@@ -13,7 +13,7 @@
                 return $http.get('http://lola-rest.com/api/admin/order/order/' + id); 
             },
             getOrderDetails: function(id) { 
-                return $http.post('http://lola-rest.com/api/admin/order/details' + id);
+                return $http.get('http://lola-rest.com/api/admin/order/details/' + id);
             }
         };
     }]);

@@ -2,17 +2,25 @@
     <h3 class="modal-title">I'm a modal!</h3>
 </div>
 <div class="modal-body">
-    <b>Label details:</b>
+    <b>Order details:</b>
     <div>
         <span class="">
-            ID: {{data.label.id}}
+            Order ID: {{data.order.id}}
         </span> <br>
         <span class="">
-            Name: {{data.label.name}}
+            Product ID: {{data.order.pid}}
         </span> <br>
         <span class="">
-            Name: {{data.label.description}}
-        </span> 
+            Product Name: {{data.order.productName}}
+        </span> <br>
+        <span class="">
+            Quantity: {{data.order.quantity}}
+        </span> <br>
+        <span class="">
+            Shipping Address: {{data.order.street}},{{data.order.city}},{{data.order.state}},
+            {{data.order.zip}},{{data.order.country}}
+        </span> <br>
+        
     </div>
 </div>
 <div class="modal-footer">

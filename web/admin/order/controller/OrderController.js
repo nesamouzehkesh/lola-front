@@ -12,20 +12,10 @@
         $scope.getOrderList();
         
         };
-        
-        //for initialization
-        OrderApi.getOrders()
-              .success(function (data) {
-                  $scope.data.orders = data;
-              }) 
-              .error(function (error) {
-                    $scope.data.error = error;
-              });
-        
-          
+         
         // Get list of orders from backend
         $scope.getOrderList = function() {
-            OrderApi.getOrders($scope.data.search)
+            OrderApi.getOrders()
               .success(function (data) {
                   $scope.data.orders = data;
               }) 
