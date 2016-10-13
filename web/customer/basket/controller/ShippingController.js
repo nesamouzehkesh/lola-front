@@ -14,7 +14,7 @@
                 setNewBilling: false,
                 setNewBillingAsPrimary: false,
                 newBilling: {},
-                SameAddress: false
+                sameAddress: false
             };
 
             $scope.getCustomerAddress();

@@ -1,7 +1,7 @@
 (function () {
     var myApp = angular.module('mainApp');
     
-    myApp.controller('OrderController', ['$scope', 'LabelApi', '$location', '$http', '$uibModal', '$ngBootbox',
+    myApp.controller('OrderController', ['$scope', 'OrderApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, OrderApi, $location, $http, $uibModal, $ngBootbox) {
         var init = function() {
         $scope.data = {}; 
