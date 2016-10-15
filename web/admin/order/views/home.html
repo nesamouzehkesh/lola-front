@@ -3,7 +3,7 @@
 <table class="table table-hover margin-top-20">
     <tr>
         <th>Order ID</th>
-        <th>Customer ID</th>
+        <th>Customer ID/Name</th>
         <th>Order Date</th>
         <th></th>
         
@@ -11,7 +11,7 @@
     <tr dir-paginate="order in data.orders | filter:q | itemsPerPage: pageSize" current-page="currentPage">
         <td>{{order.id}}</td>
         <td>
-            {{order.cid}}
+            {{order.cid}}/{{order.customerFname}}-{{order.customerLname}}
         </td>
         <td>
             {{order.orderDate}}
@@ -24,7 +24,6 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li><a ng-click="viewOrder(order)"><span class="glyphicon glyphicon-eye-open"></span> View</a></li>
-            <li><a ng-click="editOrder(order)"><span class="glyphicon glyphicon-pencil"></span> Edit</a></li>
             <li><a ng-click="deleteOrder(order)"><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
           </ul>
         </div>            

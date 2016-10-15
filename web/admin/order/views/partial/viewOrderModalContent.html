@@ -1,26 +1,43 @@
 <div class="modal-header">
-    <h3 class="modal-title">I'm a modal!</h3>
+    <h3 class="modal-title">Order Information</h3>
 </div>
 <div class="modal-body">
     <b>Order details:</b>
     <div>
+       
         <span class="">
-            Order ID: {{data.order.id}}
+            Customer ID/Name:  {{data.order.cid}}/{{data.order.customerFname}}-{{data.order.customerLname}}
+        </span> <br>
+        <span>
+            Order ID/Date: {{data.order.oid}}#{{data.order.orderDate}}
         </span> <br>
         <span class="">
-            Product ID: {{data.order.pid}}
-        </span> <br>
+            Shipping Address: 
+            {{ data.order.shipping.street }},{{ data.order.shipping.city }},{{ data.order.shipping.state }},
+            {{ data.order.shipping.zip }},{{ data.order.shipping.country }}
+        </span> <br>        
         <span class="">
-            Product Name: {{data.order.productName}}
-        </span> <br>
-        <span class="">
-            Quantity: {{data.order.quantity}}
-        </span> <br>
-        <span class="">
-            Shipping Address: {{data.order.street}},{{data.order.city}},{{data.order.state}},
-            {{data.order.zip}},{{data.order.country}}
-        </span> <br>
+            Billing Address: 
+            {{ data.order.billing.street }},{{ data.order.billing.city }},{{ data.order.billing.state }},
+            {{ data.order.billing.zip }},{{ data.order.billing.country }}
+        </span> <br> <br>
         
+        <span><b>Products purchased in this order:</b></span>
+        <div ng-repeat="detail in data.order.orderDetails">
+            <span class="">
+                Product ID: {{ detail.pid }}
+            </span> <br>
+            <span class="">
+                Product Name: {{ detail.productName }}
+            </span> <br>
+            <span class="">
+                Quantity: {{ detail.quantity }}
+            </span> <br>
+            <span class="">
+                Comment: {{ detail.comment }}
+            </span> <br>
+            <span>----------</span>
+        </div>
     </div>
 </div>
 <div class="modal-footer">

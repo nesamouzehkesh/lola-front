@@ -9,11 +9,11 @@
             getOrders: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/order/orders', {params: {id: id}}); 
             },
+            deleteOrder: function(id) {
+                return $http.delete('http://lola-rest.com/api/admin/order/order/' + id);
+            },
             getOrder: function(id) {
                 return $http.get('http://lola-rest.com/api/admin/order/order/' + id); 
-            },
-            getOrderDetails: function(id) { 
-                return $http.get('http://lola-rest.com/api/admin/order/details/' + id);
             }
         };
     }]);

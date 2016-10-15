@@ -42,6 +42,25 @@
                 });          
         };
         
+         
+        // Delete an order  
+        $scope.deleteOrder = function(order) {
+            // Show confirmation message before deleting an item
+            $ngBootbox.confirm("Are you sure you want to delete this Succession Plan?")
+                // If user confirmed
+                .then(function() {
+                    OrderApi.deleteOrder(order.id)
+                        .success(function () {
+                            $scope.data.orders.splice($scope.data.orders.indexOf(order), 1);
+                        }) 
+                        .error(function (error) {
+                              $scope.data.error = error;
+                        });  
+                }, function() {
+                    console.log("Confirm dismissed!");
+                });
+        };    
+        
    
         
          //Modal that shows the information of an order when clicked on "View"
