@@ -33,9 +33,11 @@
         };
         
         $scope.submitOrder = function(){
+            
             BasketApi.submitOrder($scope.data.address)
-                .success(function(){
+                .success(function(data){
                     // Noting to do
+                    //$location.path("/paypal/" + data.id);    
                 })
                 .error(function(error){
                     $scope.data.error = error;
