@@ -26,6 +26,9 @@
                 return $http.post('http://lola-rest.com/api/admin/order/postorder', params); /* 
             * This is actually the address info of the order that custmer submits after filling the address 
             * form but for API routing problems the prefix had to be "/api/admin/order" this needs to be fixed!*/
+            },
+             getOrderDetails: function(orderId) {
+                return $http.get('http://lola-rest.com/api/admin/order/yourorder/' + orderId); 
             }
          };
     }]);

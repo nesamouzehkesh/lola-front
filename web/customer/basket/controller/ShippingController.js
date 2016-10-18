@@ -33,16 +33,27 @@
         };
         
         $scope.submitOrder = function(){
-            
             BasketApi.submitOrder($scope.data.address)
                 .success(function(data){
                     // Noting to do
-                    //$location.path("/paypal/" + data.id);    
+                    getOrderDetails(data.id);
+                    $location.path("/paypal/" + data.id);
+                    
                 })
                 .error(function(error){
                     $scope.data.error = error;
                 });
               
+        };
+        //return the order's complete information for this order.id (data.id)
+        $scope.getOrderDetails = function() {
+            BasketApi.getOrderDetails()
+                .success(function(data){
+                    $scope.data.order = data;
+            })
+                .error(function(error){
+                    $scope.data.error = error;
+            });
         };
         init();
     }]);     
