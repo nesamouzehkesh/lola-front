@@ -3,11 +3,15 @@
     
     myApp.controller('PageController', ['$scope', 'PageApi', '$location', '$http', '$uibModal', '$ngBootbox',
         function($scope, PageApi, $location, $http, $uibModal, $ngBootbox) {
+        var init = function() {    
         $scope.data = {}; 
         $scope.data.page = {};
         $scope.currentPage = 1;
         $scope.pageSize = 10;
         $scope.data.pages = [];
+        $scope.getPageList();
+        
+        };
         
         // Get list of pagess from backend
         PageApi.getPages()
@@ -17,6 +21,17 @@
           .error(function (error) {
                 $scope.data.error = error;
           });
+          
+        // Get list of pages from backend
+        $scope.getPageList = function() {
+            PageApi.getPages($scope.data.search)
+              .success(function (data) {
+                  $scope.data.pages = data;
+              }) 
+              .error(function (error) {
+                    $scope.data.error = error;
+              });
+        };  
           
         
         // Delete a page   
@@ -61,7 +76,7 @@
                     var modalInstance = openPageModal(data);
                     
                     modalInstance.result.then(function (data) {
-                        //TODO: update same page in the $scope.data.pages
+                        $scope.getPageList();
                         console.log('Modal submited and colsed');
                     }, function () {
                         console.log('Modal dismissed at: ');
@@ -88,5 +103,7 @@
             
             return modalInstance;
         }
+        
+        init();
     }]);     
 }) ();
