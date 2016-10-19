@@ -4,8 +4,16 @@
             $routeProvider.when("/", {
                 templateUrl: "views/basket.html",
                 controller: "BasketController"
+            })
+            .when("/shipping", {
+                templateUrl: "views/shipping.html",
+                controller: "ShippingController"
+            })
+            .when("/paypal/:ORDER_ID", {
+                templateUrl: "views/paypal.html",
+                controller: "PayPalController"
             });
-            $routeProvider.otherwise({ redirectTo: '/' });
+            //$routeProvider.otherwise({ redirectTo: '/' });
         }]);
 })(); 
 

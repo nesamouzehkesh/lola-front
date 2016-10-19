@@ -168,6 +168,13 @@
                     'icon': 'glyphicon glyphicon-user',
                     'color': 'yellow',
                     'description': 'Customers of syste'
+                },
+                {
+                    'name': 'Orders',
+                    'url': '/admin/order',
+                    'icon': 'glyphicon glyphicon-user',
+                    'color': 'blue',
+                    'description': 'Orders of syste'
                 }
                 
             ];

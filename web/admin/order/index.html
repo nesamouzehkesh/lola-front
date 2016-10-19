@@ -3,27 +3,10 @@
     <head>
         <title>Lola Shopping Centre</title>
         
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        
         <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="../../bower_components/components-font-awesome/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="../../bower_components/angular-ui-select/dist/select.css">
         <link rel="stylesheet" href="../../css/app.css" type="text/css">
-        <link rel="stylesheet" href="../../bower_components/startbootstrap-landing-page/css/landing-page.css">
-        <link rel="stylesheet" href="../../bower_components/startbootstrap-products-layout/css/heroic-features.css">
-        <link rel="stylesheet" href="../../bower_components/startbootstrap-products-layout/css/heroic-features.css">
-        <link rel="stylesheet" href="../../bower_components/startbootstrap-products-layout/css/bootstrap.css">
-        <link href="../../bower_components/startbootstrap-products-layout/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../bower_components/startbootstrap-products-layout/css/heroic-features.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../bower_components/startbootstrap-products-layout/css/bootstrap.css" type="text/css">
-
-
         
         <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
@@ -40,18 +23,32 @@
         <script type="text/javascript" src="../app/app.js"></script>
         <script type="text/javascript" src="app/app.js"></script>
         <script type="text/javascript" src="app/routes.js"></script>
-        <script type="text/javascript" src="controller/BasketController.js"></script>
-        <script type="text/javascript" src="controller/ShippingController.js"></script>
-        <script type="text/javascript" src="services/BasketService.js"></script>
+        <script type="text/javascript" src="controller/OrderModalController.js"></script>
+        <script type="text/javascript" src="controller/OrderController.js"></script>
+        <script type="text/javascript" src="services/OrderService.js"></script>
     </head>
     <body>
-        <div data-ng-controller="CustomerMainController">
-            <!-- Navigation -->
-            <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-                <ng-include src="'../views/navbar.html'"></ng-include>
-            </nav> 
+        <div data-ng-controller="AdminMainController">
+            <!-- Left sidebar -->
+            <div id="main-sidebar" data-spy="affix" data-offset-top="0" data-offset-bottom="0">
+                <ng-include src="'../views/sidebar.html'"></ng-include>
+            </div>
+            <!-- End: Left sidebar -->
             
-            <ng-view></ng-view>
+            <div id="main-body" class="main-body-default container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-s-11 col-md-10 col-lg-10 margin-top-40">
+                        
+                        <!-- Bootstrap Panels -->
+                        <div class="panel panel-default margin-top-10">
+                            <div class="panel-body">
+                                <ng-view></ng-view>
+                            </div>
+                        </div>
+                        <!-- End: Bootstrap Panels -->
+                    </div>
+                </div>            
+            </div>                
         </div>
     </body>
 </html>
