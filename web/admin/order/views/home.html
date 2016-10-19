@@ -1,0 +1,42 @@
+
+
+<table class="table table-hover margin-top-20">
+    <tr>
+        <th>Order ID</th>
+        <th>Customer ID/Name</th>
+        <th>Order Date</th>
+        <th></th>
+        
+    </tr>
+    <tr dir-paginate="order in data.orders | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+        <td>{{order.id}}</td>
+        <td>
+            {{order.cid}}/{{order.customerFname}}-{{order.customerLname}}
+        </td>
+        <td>
+            {{order.orderDate}}
+        </td>
+        <td>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="glyphicon glyphicon-cog"></span>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a ng-click="viewOrder(order)"><span class="glyphicon glyphicon-eye-open"></span> View</a></li>
+            <li><a ng-click="deleteOrder(order)"><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
+          </ul>
+        </div>            
+
+        </td>
+    </tr>
+</table>
+
+<div class="text-center">
+    <dir-pagination-controls 
+        boundary-links="true" 
+        on-page-change="pageChangeHandler(newPageNumber)" 
+        template-url="../../../bower_components/angularUtils-pagination/dirPagination.tpl.html"
+        >
+    </dir-pagination-controls>
+</div>

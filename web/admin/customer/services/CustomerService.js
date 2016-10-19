@@ -18,8 +18,8 @@
             getOrders: function() {
                 return $http.get('http://lola-rest.com/api/admin/order/orders');
             },
-            getOrderDetails: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/order/order-details/' + id);
+            getOrder: function(id) {
+                return $http.get('http://lola-rest.com/api/admin/order/order/' + id); 
             },
             deleteOrder: function(id) {
                 return $http.delete('http://lola-rest.com/api/admin/order/order/' + id);

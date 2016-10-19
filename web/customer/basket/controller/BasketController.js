@@ -5,8 +5,6 @@
         function($scope, $routeParams, BasketApi, $location, $http, $uibModal, $ngBootbox) {
         $scope.data = {};
         
-        
-        
         BasketApi.getBasketItems()
           .success(function (data) {
               $scope.data.basketItems = data;
@@ -21,7 +19,7 @@
             $ngBootbox.confirm("Are you sure you want to delete this Succession Plan?")
                 // If user confirmed
                 .then(function() {
-                    BasketApi.deleteBasketItem(item.pid)
+                    BasketApi.deleteBasketItem(item.id)
                         .success(function () {
                             $scope.data.basketItems.splice($scope.data.basketItems.indexOf(item), 1);
                         }) 
@@ -36,13 +34,12 @@
         $scope.updateItemQuantity = function(item){
             BasketApi.updateItemQuantity(item)
                 .success(function(){
-                    $scope.data.basketItem = data;
+                    // Noting to do
                 })
                 .error(function(error){
                     $scope.data.error = error;
                 });
               
-        };
-       
+        };     
     }]);     
 }) ();

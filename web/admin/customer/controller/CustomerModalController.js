@@ -6,7 +6,7 @@
             function init() {
                 $scope.data = {};
                 $scope.data.customer = customer;
-                $scope.data.orderDetails = [];
+                $scope.data.orderDetails = {};
                 $scope.data.visible;
                 $scope.data.order = {};
                 $scope.getCustomerOrders();
@@ -33,7 +33,7 @@
             };
             
             $scope.getOrderDetails = function(order) {
-                CustomerApi.getOrderDetails(order.id) 
+                CustomerApi.getOrder(order.id) 
                   .success(function (data) {                
                       $scope.data.orderDetails = data; 
                       $scope.data.visible = true; 

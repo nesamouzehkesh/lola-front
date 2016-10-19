@@ -1,0 +1,77 @@
+<form>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="shipping-container" style="display: block;">
+                        <address>
+                            <strong>Shipping address</strong><br>
+                                <br>
+                                Street: {{data.address.shipping.street}}
+                                <br>
+                                City: {{data.address.shipping.city}}
+                                <br>
+                                State: {{data.address.shipping.state}}
+                                <br>
+                                <abbr title="ZIP code, ZIP, postcode, postal code">Postcode:</abbr>
+                                {{data.address.shipping.zip}}
+                                <br>
+                                Country: {{data.address.shipping.country}}
+                            </address>
+                    </div>
+                    <label>
+                        <input type="checkbox" ng-model="data.address.setNewShipping">
+                        <strong> Set a new shipping address?</strong>
+                    </label>
+                    
+                    <div ng-include="'views/newShippingAddressForm.html'" ng-show="data.address.setNewShipping"></div>
+                </div>
+                
+                <div id="billing" class="col-md-6">
+                    <div id="billing-container" style="display: block;">
+                        <address>
+                            <strong>Billing address</strong><br>
+                                <br>
+                                Street: {{data.address.billing.street}}
+                                <br>
+                                City: {{data.address.billing.city}}
+                                <br>
+                                State: {{data.address.billing.state}}
+                                <br>
+                                <abbr title="ZIP code, ZIP, postcode, postal code">Postcode:</abbr>
+                                {{data.address.billing.zip}}
+                                <br>
+                                Country: {{data.address.billing.country}}
+                        </address>
+                    </div>
+                    <label>
+                        <input id="saman_shipping_form_setNewBilling" type="checkbox" ng-model="data.address.setNewBilling">
+                        <strong> Set a new billing address?</strong>
+                    </label>
+                    
+                    <div ng-include="'views/newBillingAddressForm.html'" ng-show="data.address.setNewBilling"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <a class="btn btn-primary" style="padding-left: 
+            20px; padding-right: 20px;" ng-click="submitOrder()">
+        <span class="ladda-label">
+            <span class="glyphicon glyphicon-credit-card "></span>
+                Go to Payment
+        </span>
+    </a>
+    <a class="btn btn-primary" style="padding-left: 
+            20px; padding-right: 20px;" href="#/">
+        <span class="ladda-label">
+            <span class="glyphicon glyphicon-credit-card "></span>
+                Back to basket
+        </span>
+    </a>
+</form>
+
+
+
+
+

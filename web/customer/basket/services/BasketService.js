@@ -9,16 +9,26 @@
             getBasketItems: function() {
                 return $http.get('http://lola-rest.com/api/customer/basket/items'); 
             },
+            getCustomerAddress: function () {
+                return $http.get('http://lola-rest.com/api/admin/customer/shipping'); 
+            },
             deleteBasketItem: function(id) {
                 return $http.delete('http://lola-rest.com/api/customer/basket/items/' + id);
             },
             updateItemQuantity : function(item) {
                 var thisItemQuant = {
-                  id: item.id,
                   quantity: item.quantity
                 };
                 
-                return $http.post('http://lola-rest.com/api/customer/basket/item', {params: thisItemQuant}); 
+                return $http.post('http://lola-rest.com/api/customer/basket/items/' + item.id, {params: thisItemQuant}); 
+            },
+            submitOrder : function(params) {
+                return $http.post('http://lola-rest.com/api/admin/order/postorder', params); /* 
+            * This is actually the address info of the order that custmer submits after filling the address 
+            * form but for API routing problems the prefix had to be "/api/admin/order" this needs to be fixed!*/
+            },
+             getOrderDetails: function(orderId) {
+                return $http.get('http://lola-rest.com/api/admin/order/yourorder/' + orderId); 
             }
          };
     }]);

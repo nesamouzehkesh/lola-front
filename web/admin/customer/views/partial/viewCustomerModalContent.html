@@ -1,8 +1,7 @@
 <div class="modal-header">
-    <h3 class="modal-title">I'm a modal!</h3>
+    <h4 class="modal-title">Customer details</h4>
 </div>
 <div class="modal-body">
-    <b>Customer details:</b>
     <div>
         <span class="">
             ID: {{data.customer.id}}
@@ -18,7 +17,7 @@
         </span> <br>
         <span class="">
             Customer Orders:
-            <div class="list-group">
+            <span class="list-group">
               <span ng-repeat="order in data.customer.orders"  class="list-group-item">
                   <a ng-click="getOrderDetails(order)">#{{order.id}}{{order.orderDate}}</a>
                   <button type="button" class="pull-right"  ng-click="deleteOrder(order)">
@@ -26,17 +25,17 @@
                         Delete
                   </button>
               </span>
-            </div>            
+            </span>            
         </span>
         
         <span ng-show="data.visible" class=""> 
             <span style="font-weight: bold;"> Order Details: </span> <br>
-            <div ng-repeat="orderDetail in data.orderDetails"> 
-                <span> Order ID: {{orderDetail.id}} </span> <br>
-                <span> Order Quantity: {{orderDetail.quantity}} </span> <br>
-                <span> Comments: {{orderDetail.comment}} </span> <br>
-                <span> Product: {{orderDetail.product}} </span> <br>
-                <span> Status: {{orderDetail.status}} </span> <br>
+            <div ng-repeat="detail in data.orderDetails"> 
+                <span> Order ID: {{detail.id}} </span> <br>
+                <span> Order Quantity: {{detail.quantity}} </span> <br>
+                <span> Comments: {{detail.comment}} </span> <br>
+                <span> Product: {{detail.productName}} </span> <br>
+                <span> Status: {{detail.pid}} </span> <br>
 
 
                 <a ng-click="hideOrderDetails()" style="float: right;">Hide</a>
