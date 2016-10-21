@@ -1,31 +1,33 @@
 (function () {
     var myApp = angular.module('mainApp');
    
-    myApp.controller('CustomerModalController', ['$scope', 'CustomerApi', '$uibModalInstance', 'customer',
-        function ($scope, CustomerApi, $uibModalInstance, customer) {
+    myApp.controller('UserModalController', ['$scope', 'UserApi', '$uibModalInstance', 'user',
+        function ($scope, UserApi, $uibModalInstance, user) {
             function init() {
                 $scope.data = {};
-                $scope.data.customer = customer;
+                $scope.data.user = user;
                 $scope.data.orderDetails = {};
                 $scope.data.visible;
                 $scope.data.order = {};
-                $scope.getCustomerOrders();
+                $scope.getUserOrders();
             };
             
-            $scope.getCustomerOrders = function () {
-                CustomerApi.getCustomerOrders($scope.data.customer.id)
-                  .success(function(data) {
-                      $scope.data.customer.orders = data;   
-                })
-                  .error(function (error) {
-                        $scope.data.error = error;
-                  });         
+            $scope.getUserOrders = function () {
+                if ($scope.data.user.id !== undefined) {
+                    UserApi.getUserOrders($scope.data.user.id)
+                      .success(function(data) {
+                          $scope.data.user.orders = data;   
+                    })
+                      .error(function (error) {
+                            $scope.data.error = error;
+                    });         
+                }
             };
             
             $scope.deleteOrder = function (order) {
-                CustomerApi.deleteOrder(order.id)
+                UserApi.deleteOrder(order.id)
                   .success(function () {
-                        $scope.getCustomerOrders();
+                        $scope.getUserOrders();
                         }) 
                   .error(function (error) {
                         $scope.data.error = error;
@@ -33,7 +35,7 @@
             };
             
             $scope.getOrderDetails = function(order) {
-                CustomerApi.getOrder(order.id) 
+                UserApi.getOrder(order.id) 
                   .success(function (data) {                
                       $scope.data.orderDetails = data; 
                       $scope.data.visible = true; 
@@ -50,7 +52,7 @@
             
             // Get list of orders from backend
             /*
-            CustomerApi.getOrders()
+            UserApi.getOrders()
               .success(function (data) {
                 $scope.data.orders = data;
               }) 
@@ -59,8 +61,8 @@
             });
             */
             
-            $scope.postCustomer = function (customer) {
-                CustomerApi.postCustomer(customer)
+            $scope.postUser = function (user) {
+                UserApi.postUser(user)
                     .success(function(data) {
                         $uibModalInstance.close(data); 
                     });

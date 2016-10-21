@@ -4,16 +4,19 @@
 (function(){ 
     var adminApiRequests = angular.module('LabelService',[]);
     
-    adminApiRequests.factory('LabelApi', ['$http', function($http) {
+    adminApiRequests.factory('LabelApi', ['$http', 'env', function($http, env) {
         return {
             getLabels: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/label/labels', {params: {id: id}}); 
+                return $http.get(env.apiAdminUrl + '/label/labels', {params: {id: id}}); 
             },
             getLabel: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/label/label/' + id); 
+                return $http.get(env.apiAdminUrl + '/label/labels/' + id); 
             },
-             postLabel: function(label) { 
-                return $http.post('http://lola-rest.com/api/admin/label/label', {label: label});
+            postLabel: function(label) { 
+                return $http.post(env.apiAdminUrl + '/label/labels', {label: label});
+            },
+            deleteLabel: function(label) { 
+                return $http.delete(env.apiAdminUrl + '/label/labels', {label: label});
             }
         };
     }]);

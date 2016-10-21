@@ -92,7 +92,7 @@
             };
             
             $scope.$on('event:auth-logout-complete', function () {
-                window.location = "/admin#/login";
+                window.location = "/admin/login";
             });
             
             $scope.$on('event:auth-login-complete', function () {
@@ -100,15 +100,7 @@
             });
             
             $scope.$on('event:auth-loginRequired', function () {
-                
-                window.location = "/admin#/login";
-                /*
-                $uibModal.open({
-                    templateUrl: 'login.html',
-                    controller:  'ModalInstanceCtrl',
-                    backdrop:    'static'
-                });
-                */
+                window.location = "/admin/login";
             });            
             
             $scope.data = {};        
@@ -163,11 +155,11 @@
                     'description': 'Brands of syste'
                 },
                 {
-                    'name': 'Customers',
-                    'url': '/admin/customer',
+                    'name': 'Users',
+                    'url': '/admin/user',
                     'icon': 'glyphicon glyphicon-user',
                     'color': 'yellow',
-                    'description': 'Customers of syste'
+                    'description': 'Users of syste'
                 },
                 {
                     'name': 'Orders',

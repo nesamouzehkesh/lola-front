@@ -4,13 +4,13 @@
 (function(){ 
     var CustomerApiRequests = angular.module('CategoryService',[]);
     
-    CustomerApiRequests.factory('CategoryApi', ['$http', function($http) {
+    CustomerApiRequests.factory('CategoryApi', ['$http', 'env', function($http, env) {
         return {
             getCategories: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/category/categories', {params: {id: id}}); 
+                return $http.get(env.apiUrl + '/shop/category/categories', {params: {id: id}}); 
             },
             getCategory: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/category/category/' + id); 
+                return $http.get(env.apiUrl + '/shop/category/categories/' + id); 
             }
         };
     }]);

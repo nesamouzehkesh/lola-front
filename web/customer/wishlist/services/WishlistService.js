@@ -4,12 +4,11 @@
 (function(){ 
     var CustomerApiRequests = angular.module('WishlistService',[]);
     
-    CustomerApiRequests.factory('WishlistApi', ['$http', function($http) {
+    CustomerApiRequests.factory('WishlistApi', ['$http', 'env', function($http, env) {
         return {
             getWishlistItems: function(criteria) {
-                return $http.get('http://lola-rest.com/api/customer/product/products', {params: criteria}); 
+                return $http.get(env.apiUrl + '/shop/wishlist/items', {params: criteria}); 
             }
-            
          };
     }]);
 })();

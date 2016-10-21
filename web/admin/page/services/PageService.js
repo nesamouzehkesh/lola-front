@@ -4,19 +4,19 @@
 (function(){ 
     var adminApiRequests = angular.module('PageService',[]);
     
-    adminApiRequests.factory('PageApi', ['$http', function($http) {
+    adminApiRequests.factory('PageApi', ['$http', 'env', function($http, env) {
         return {
             getPages: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/page/pages', {params: {id: id}}); 
+                return $http.get(env.apiAdminUrl + '/page/pages', {params: {id: id}}); 
             },
             getPage: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/page/page/' + id); 
+                return $http.get(env.apiAdminUrl + '/page/pages/' + id); 
             },
             deletePage: function(id) {
-                return $http.delete('http://lola-rest.com/api/admin/page/page/' + id);
+                return $http.delete(env.apiAdminUrl + '/page/pages/' + id);
             },
             postPage: function(page) { 
-                return $http.post('http://lola-rest.com/api/admin/page/page', {page: page});
+                return $http.post(env.apiAdminUrl + '/page/pages', {page: page});
             }
         };
     }]);

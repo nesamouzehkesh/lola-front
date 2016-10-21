@@ -1,4 +1,4 @@
 (function () {
     var myApp = angular.module('mainApp');
-    myApp.requires.push('CustomerService');
+    myApp.requires.push('UserService');
 }) ();

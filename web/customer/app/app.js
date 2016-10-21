@@ -1,4 +1,11 @@
 (function () {
+    
+    var env = {};
+    // Import variables if present (from env.js)
+    if (window) {  
+      Object.assign(env, window.env);
+    }
+    
     var myApp = angular.module('mainApp', [
         'ngRoute', 
         'ngResource', 
@@ -8,6 +15,8 @@
         'ui.select', 
         'ngSanitize'
     ]);
+    
+    myApp.constant('env', env);
     
     myApp.controller('CustomerMainController', ['$scope', '$http', '$location',
         function($scope, $http, $location) {

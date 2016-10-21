@@ -4,21 +4,20 @@
 (function(){ 
     var adminApiRequests = angular.module('CategoryService',[]);
     
-    adminApiRequests.factory('CategoryApi', ['$http', function($http) {
+    adminApiRequests.factory('CategoryApi', ['$http', 'env', function($http, env) {
         return {
             getCategories: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/category/categories', {params: {id: id}}); 
+                return $http.get(env.apiAdminUrl + '/category/categories', {params: {id: id}}); 
             },
             getCategory: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/category/category/' + id); 
+                return $http.get(env.apiAdminUrl + '/category/categories/' + id); 
             },
             deleteCategory: function(id) {
-                return $http.delete('http://lola-rest.com/api/admin/category/category/' + id);
+                return $http.delete(env.apiAdminUrl + '/category/categories/' + id);
             },
             postCategory: function(category) { 
-                return $http.post('http://lola-rest.com/api/admin/category/category', {category: category});
+                return $http.post(env.apiAdminUrl + '/category/categories', {category: category});
             }
-            
         };
     }]);
 })();

@@ -1,25 +1,24 @@
 <div class="modal-header">
-    <h3 class="modal-title">I'm a modal!</h3>
+    <h4 class="modal-title">User details</h4>
 </div>
 <div class="modal-body">
-    <b>Customer details:</b>
     <div>
         <span class="">
-            ID: {{data.customer.id}}
+            ID: {{data.user.id}}
         </span> <br>
         <span class="">
-            Name: {{data.customer.firstName}}  {{data.customer.lastName}}
+            Name: {{data.user.firstName}}  {{data.user.lastName}}
         </span> <br>
         <span class="">
-            Email: {{data.customer.email}} 
+            Email: {{data.user.email}} 
         </span> <br>
         <span class="">
-            Phone Number: {{data.customer.phoneNumber}} 
+            Phone Number: {{data.user.phoneNumber}} 
         </span> <br>
         <span class="">
-            Customer Orders:
+            User Orders:
             <span class="list-group">
-              <span ng-repeat="order in data.customer.orders"  class="list-group-item">
+              <span ng-repeat="order in data.user.orders"  class="list-group-item">
                   <a ng-click="getOrderDetails(order)">#{{order.id}}{{order.orderDate}}</a>
                   <button type="button" class="pull-right"  ng-click="deleteOrder(order)">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

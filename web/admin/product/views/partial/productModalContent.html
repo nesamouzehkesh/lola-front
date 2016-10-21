@@ -1,17 +1,16 @@
 <div class="modal-header">
-    <h3 class="modal-title">I'm a modal!</h3>
+    <h4 class="modal-title">Add a new product</h4>
 </div>
 <div class="modal-body">
     <form ng-submit="postProduct(data.product)" id="postProductForm">
-        <b>Add a new product:</b>
-        <input type="hidden" ng-model="data.product.id" />
+        <!-- <input type="hidden" ng-model="data.product.id" /> -->
         <fieldset class="form-group">
-            <textarea class="form-control" placeholder="Product Name" 
-                      title="Name"ng-model="data.product.name"></textarea>
+            <input class="form-control" placeholder="Product Name" 
+                      title="Name"ng-model="data.product.name" />
         </fieldset>   
         <fieldset class="form-group">
-            <input class="form-control" placeholder="Describe the product..." title="Description"
-                   ng-model="data.product.description" />
+            <textarea class="form-control" placeholder="Describe the product..." title="Description"
+                   ng-model="data.product.description"></textarea>
         </fieldset>
         <fieldset class="form-group">
             <input class="form-control" placeholder="Product Price" title="Price"
@@ -43,14 +42,13 @@
         <fieldset class="form-group">
             <ui-select ng-model="data.product.brand">
                 <ui-select-match placeholder="Product Brand">
-                    {{ $item.name }}
+                    {{ $select.selected.name }}
                 </ui-select-match>
                 <ui-select-choices repeat="item in (data.brands | filter: $select.search) track by item.id">
                     <span ng-bind="item.name"></span>
                 </ui-select-choices>
             </ui-select>
         </fieldset>
-        
     </form>   
 </div>
 <div class="modal-footer">

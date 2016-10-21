@@ -4,13 +4,13 @@
 (function(){ 
     var CustomerApiRequests = angular.module('ProductService',[]);
     
-    CustomerApiRequests.factory('ProductApi', ['$http', function($http) {
+    CustomerApiRequests.factory('ProductApi', ['$http', 'env', function($http, env) {
         return {
             getProducts: function(criteria) {
-                return $http.get('http://lola-rest.com/api/customer/product/products', {params: criteria}); 
+                return $http.get(env.apiUrl + '/shop/product/products', {params: criteria}); 
             },
             getProduct: function(id) {
-                return $http.get('http://lola-rest.com/api/admin/product/product/' + id); 
+                return $http.get(env.apiUrl + '/shop/product/products/' + id); 
             },
             addToCart: function(product) {
                 var order = {
@@ -18,14 +18,14 @@
                   count: product.count
                 };
                 
-                return $http.post('http://lola-rest.com/api/customer/basket/items', {params: order}); 
+                return $http.post(env.apiUrl + '/shop/basket/items', {params: order}); 
             },
             addToWishlist: function(product) {
                 var item = {
                   id: product.id
                 };
                 
-                return $http.post('http://lola-rest.com/api/customer/wishlist/items', {params: item}); 
+                return $http.post(env.apiUrl + '/shop/wishlist/items', {params: item}); 
             }
          };
     }]);

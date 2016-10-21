@@ -1,13 +1,20 @@
 <div class="modal-header">
-    <h3 class="modal-title">I'm a modal!</h3>
+    <h4 class="modal-title">Add a new category</h4>
 </div>
 <div class="modal-body">
     <form ng-submit="postCategory(data.category)" id="postCategoryFrom">
-        <b>Add a new Category:</b>
         <input type="hidden" ng-model="data.category.id" />
         <fieldset class="form-group">
-            <textarea class="form-control" placeholder="Category Name" 
-                      title="Name"ng-model="data.category.name"></textarea>
+            <input class="form-control" placeholder="Category Name" 
+                      title="Name"ng-model="data.category.name" />
+        </fieldset> 
+        <fieldset class="form-group">
+            <input class="form-control" placeholder="Category Url" 
+                      title="Name"ng-model="data.category.url" />
+        </fieldset>         
+        <fieldset class="form-group">
+            <textarea class="form-control" placeholder="Category Description" 
+                      title="Name"ng-model="data.category.description"></textarea>
         </fieldset>   
     </form>   
 </div>

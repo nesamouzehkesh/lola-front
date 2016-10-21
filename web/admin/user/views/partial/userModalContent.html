@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h4 class="modal-title">Add a new user</h4>
+</div>
+<div class="modal-body">
+    <form ng-submit="postUser(data.user)" id="postUserForm">
+        <input type="hidden" ng-model="data.user.id" />
+        <fieldset class="form-group">
+            <input class="form-control" placeholder="User First Name" 
+                      title="Name"ng-model="data.user.firstName" />
+        </fieldset>   
+        <fieldset class="form-group">
+            <input class="form-control" placeholder="User Last Name" 
+                      title="Name"ng-model="data.user.lastName" />
+        </fieldset>
+        <fieldset class="form-group">
+            <input class="form-control" placeholder="User Email Address" 
+                      title="Name"ng-model="data.user.email" />
+        </fieldset>
+        <fieldset class="form-group">
+            <input class="form-control" placeholder="User Phone number" 
+                      title="Name"ng-model="data.user.phoneNumber" />
+        </fieldset>
+    </form>   
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="submit" form="postUserForm" value="Submit">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

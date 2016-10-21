@@ -10,13 +10,13 @@
                 return $http.get(env.apiAdminUrl + '/product/products', {params: criteria}); 
             },
             getProduct: function(id) {
-                return $http.get(env.apiAdminUrl + '/product/product/' + id); 
+                return $http.get(env.apiAdminUrl + '/product/products/' + id); 
             },
             deleteProduct: function(id) {
-                return $http.delete(env.apiAdminUrl + '/product/product/' + id);
+                return $http.delete(env.apiAdminUrl + '/product/products/' + id);
             },
             postProduct: function(product) { 
-                return $http.post(env.apiAdminUrl + '/product/product', {product: product});
+                return $http.post(env.apiAdminUrl + '/product/products', {product: product});
             },
             getCategories: function() {
                 return $http.get(env.apiAdminUrl + '/category/categories');
